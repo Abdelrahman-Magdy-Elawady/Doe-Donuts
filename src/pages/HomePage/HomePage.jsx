@@ -1,16 +1,54 @@
-import { heroImg, heroSmImg } from "../../assets/constants";
+import { content } from "./constants";
+import { heroImg, heroSmImg, greenPalm, girl } from "../../assets/constants";
 import { useDoOnResize } from "../../hooks";
 import { useState } from "react";
 import { cn } from "../../Utils/cn";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
+import { useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
+import { useDispatch } from "react-redux";
+import { modifyColor } from "../../store";
 
 export default function HomePage() {
+  const dispatch = useDispatch();
+  const [prevNavState, setPrevNavState] = useState([]);
+  const homePage = useRef(null);
   const [isMd, setIsMd] = useState(window.innerWidth <= 768);
   useDoOnResize(() => setIsMd(window.innerWidth <= 768));
-
+  //---------------------------------------------------
+  useGSAP(
+    () => {
+      const colorPalette = [
+        "bg-[#f687ad] text-white",
+        "text-primary-text bg-primary-bg",
+        "text-red-500 bg-yellow-200",
+      ];
+      const sections = [".sec-1", ".sec-2", ".sec-3"];
+      sections.forEach((sec, index) => {
+        ScrollTrigger.create({
+          trigger: sec,
+          start: "clamp(top top)",
+          end: "clamp(bottom+=100% bottom)",
+          onEnter: () => {
+            dispatch(modifyColor(colorPalette[index]));
+          },
+          onEnterBack: () => {
+            dispatch(modifyColor(colorPalette[index]));
+          },
+        });
+      });
+    },
+    { scope: homePage }
+  );
   //-------------------------------------------------
   return (
-    <main className="overflow-hidden">
-      <section className="text-white pt-[calc(var(--md-nav-hight)+1rem)] h-screen bg-custom-pink flex flex-col justify-end md:justify-between gap-4 items-center">
+    <main className="overflow-hidden" ref={homePage}>
+      <section className="sec-1 text-white pt-[calc(var(--md-nav-hight)+1rem)] h-screen bg-custom-pink flex flex-col justify-end md:justify-between gap-4 items-center">
         <div>
           <div className="w-full h-32 md:h-44">
             <svg
@@ -53,6 +91,58 @@ export default function HomePage() {
             className="size-full  object-cover object-center"
           />
         </div>
+      </section>
+
+      <section className="h-screen flex flex-col sec-2 text-primary-text bg-primary-bg">
+        <Slider
+          {...{
+            infinite: true,
+            slidesToShow: 1.5,
+            slidesToScroll: 1.5,
+            autoplay: true,
+            speed: 5000,
+            autoplaySpeed: 5000,
+            cssEase: "linear",
+            responsive: [
+              {
+                breakpoint: 1024, //less than 1024
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                },
+              },
+            ],
+          }}
+        >
+          {Array(2)
+            .fill(0)
+            .map((_, index) => (
+              <div key={index} className="text-nowrap h-[--md-nav-hight]">
+                <div className="h-full   flex gap-4  justify-center items-center bg-[#bad79d] ">
+                  <div className="w-12">
+                    <img
+                      src={greenPalm}
+                      className="size-full object-center object-cover"
+                    />
+                  </div>
+
+                  <div className="uppercase text-2xl font-bold">
+                    cookies available for nationwide delivery
+                  </div>
+                </div>
+              </div>
+            ))}
+        </Slider>
+        <div className="flex-1  flex flex-col justify-center items-center gap-16 p-8 lg:p-24 text-3xl ">
+          <div>
+            <img src={girl} alt="" />
+          </div>
+          <div>{content.section2}</div>
+          <div>button</div>
+        </div>
+      </section>
+      <section className="sec-3 h-screen">
+        <p>monthly specials</p>
       </section>
     </main>
   );

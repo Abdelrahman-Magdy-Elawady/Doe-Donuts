@@ -56,7 +56,7 @@ export default function NavBar() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md",
+        "fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md z-50",
         navBarColor
       )}
     >
@@ -94,7 +94,7 @@ export default function NavBar() {
 
         <div
           className={cn(
-            "fixed top-[--md-nav-hight] bottom-0 inset-x-0 lg:relative lg:top-auto lg:bottom-auto lg:inset-x-auto lg:flex-row lg:py-0 lg:pl-0 flex flex-col py-16 gap-16 px-16 text-xl lg:text-base overflow-y-auto lg:overflow-y-visible transition-transform duration-300",
+            "fixed top-[--md-nav-hight] bottom-0 inset-x-0 lg:relative lg:top-auto lg:bottom-auto lg:inset-x-auto lg:flex-row lg:py-0 lg:pl-0 flex flex-col py-16 gap-16 px-16 text-xl lg:text-base overflow-y-auto lg:overflow-y-visible transition-transform duration-300 overscroll-contain",
             navBarColor,
             {
               "translate-x-0": showSideMenu,

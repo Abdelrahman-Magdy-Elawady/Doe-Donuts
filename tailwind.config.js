@@ -6,6 +6,8 @@ export default {
     extend: {
       colors: {
         "custom-pink": "#F687AD",
+        "primary-text": "#ae1d74",
+        "primary-bg": "#ffeaec",
       },
       screens: {
         "support-hover": { raw: "(hover: hover)" },

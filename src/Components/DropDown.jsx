@@ -26,7 +26,7 @@ export default function DropDown({ title, children, styles, ...rest }) {
       {showDetails && (
         <div
           className={cn(
-            "flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2",
+            "flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 ",
             styles?.list
           )}
         >

@@ -5,16 +5,15 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { cn } from "../Utils/cn";
 import { useState } from "react";
-import { useOnResize, useClickOutside } from "../hooks";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useDoOnResize, useClickOutside } from "../hooks";
 
 export default function NavBar() {
+  //----------------------------------------------------------------
   const navBarColor = useSelector((state) => state.navBarColor);
-  const [showSideMenu, setShowSideMenu] = useState(false);
-  const { isLg } = useOnResize();
-  const ref = useClickOutside(() => setShowSideMenu(false));
-
+  const [showSideMenu, setShowSideMenu] = useState(window.innerWidth >= 1024);
+  useDoOnResize(() => setShowSideMenu(window.innerWidth >= 1024));
+  const ref = useClickOutside(() => setShowSideMenu(window.innerWidth >= 1024));
+  //---------------------------------------------------------------------
   const links = [
     {
       path: "",
@@ -53,22 +52,6 @@ export default function NavBar() {
     </Link>
   ));
 
-  //-----------------------Animation--------------------------
-  useGSAP(
-    () => {
-      //----------------
-      if (showSideMenu) {
-        gsap.from(".menu", {
-          xPercent: 100,
-          opacity: 0,
-          duration: 0.75,
-          ease: "power3.inOut",
-        });
-      }
-    },
-    { dependencies: [showSideMenu], scope: ref }
-  );
-
   //----------------------------------------------------------
   return (
     <div
@@ -100,7 +83,7 @@ export default function NavBar() {
         </svg>
       </Link>
       <div
-        className="h-full flex justify-center items-center gap-8 font-bold uppercase order-3 lg:order-2 "
+        className="h-full flex justify-center items-center gap-8 font-bold uppercase order-3 lg:order-2"
         ref={ref}
       >
         <HamBurgerIcon
@@ -109,45 +92,48 @@ export default function NavBar() {
           onClick={() => setShowSideMenu(!showSideMenu)}
         />
 
-        {(showSideMenu || isLg) && (
-          <div
-            className={cn(
-              "fixed top-[--md-nav-hight] bottom-0 inset-x-0 lg:relative lg:top-auto lg:bottom-auto lg:inset-x-auto lg:flex-row lg:py-0 lg:pl-0 flex flex-col py-16 gap-16 px-16 text-xl lg:text-base menu overflow-y-auto",
-              navBarColor
-            )}
+        <div
+          className={cn(
+            "fixed top-[--md-nav-hight] bottom-0 inset-x-0 lg:relative lg:top-auto lg:bottom-auto lg:inset-x-auto lg:flex-row lg:py-0 lg:pl-0 flex flex-col py-16 gap-16 px-16 text-xl lg:text-base overflow-y-auto lg:overflow-y-visible transition-transform duration-300",
+            navBarColor,
+            {
+              "translate-x-0": showSideMenu,
+              "translate-x-full": !showSideMenu,
+            }
+          )}
+        >
+          <DropDown
+            title="about"
+            className={cn("hidden lg:block font-bold uppercase", navBarColor)}
+            styles={{
+              list: cn(
+                "w-44 p-4 gap-4 mt-[calc(var(--md-nav-hight)/2)]",
+                navBarColor
+              ),
+              title: "support-hover:hover:underline",
+            }}
           >
-            <DropDown
-              title="about"
-              className={cn("hidden lg:block font-bold uppercase", navBarColor)}
-              styles={{
-                list: cn(
-                  "w-44 p-4 gap-4 mt-[calc(var(--md-nav-hight)/2)]",
-                  navBarColor
-                ),
-                title: "support-hover:hover:underline",
-              }}
-            >
-              {dropDownLinks}
-            </DropDown>
-            <Details
-              title="about"
-              className={cn("block lg:hidden font-bold uppercase", navBarColor)}
-              styles={{
-                list: cn(
-                  "w-full lg:p-4 gap-8  lg:mt-[calc(var(--md-nav-hight)/2)] py-4 ",
-                  navBarColor
-                ),
-                title:
-                  "flex items-center justify-between gap-2 support-hover:hover:underline py-2",
-              }}
-            >
-              {dropDownLinks}
-            </Details>
+            {dropDownLinks}
+          </DropDown>
+          <Details
+            title="about"
+            className={cn("block lg:hidden font-bold uppercase", navBarColor)}
+            styles={{
+              list: cn(
+                "w-full lg:p-4 gap-8  lg:mt-[calc(var(--md-nav-hight)/2)] py-4 ",
+                navBarColor
+              ),
+              title:
+                "flex items-center justify-between gap-2 support-hover:hover:underline py-2",
+            }}
+          >
+            {dropDownLinks}
+          </Details>
 
-            {links}
-          </div>
-        )}
+          {links}
+        </div>
       </div>
+
       <Link to="/cart" className=" order-1 lg:order-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"

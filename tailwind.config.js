@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "AE1D74",
+        "custom-pink": "#F687AD",
       },
       screens: {
         "support-hover": { raw: "(hover: hover)" },

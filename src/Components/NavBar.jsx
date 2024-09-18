@@ -56,7 +56,7 @@ export default function NavBar() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain",
+        "fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md",
         navBarColor
       )}
     >

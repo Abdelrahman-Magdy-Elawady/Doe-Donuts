@@ -3,28 +3,24 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 //-----------------------------------------------------
 import { navBarColorReducer } from "./Slices/navBarColorSlice";
 //-----------------------------------------------------
-import { categoriesApi } from "./APIS/categoriesApi";
-import { specificCategoryApi } from "./APIS/specificCategoryApi";
+import { donutsApi } from "./APIS/donutsApi";
+
 //------------------------------------------------------
 export const store = configureStore({
   reducer: {
-    [categoriesApi.reducerPath]: categoriesApi.reducer,
-    [specificCategoryApi.reducerPath]: specificCategoryApi.reducer,
+    [donutsApi.reducerPath]: donutsApi.reducer,
+
     navBarColor: navBarColorReducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware()
-      .concat(categoriesApi.middleware)
-      .concat(specificCategoryApi.middleware);
+    return getDefaultMiddleware().concat(donutsApi.middleware);
   },
 });
 setupListeners(store.dispatch);
 
 //----------------------------------------------------------
 
-export { useFetchCategoriesQuery } from "./APIS/categoriesApi";
-export { useFetchSpecificCategoryQuery } from "./APIS/specificCategoryApi";
+export { useFetchDonutsQuery } from "./APIS/donutsApi";
 
 //----------------------------------------------------------------------
-
 export { modifyColor } from "./Slices/navBarColorSlice";

@@ -3,3 +3,8 @@ export { default as heroImg } from "./imgs/HomePage/heroMd.webp";
 export { default as heroSmImg } from "./imgs/HomePage/heroSm.webp";
 export { default as greenPalm } from "./imgs/HomePage/greenPalm.svg";
 export { default as girl } from "./imgs/HomePage/girl.svg";
+export { default as monthlySpecialImg } from "./imgs/HomePage/mspecial.svg";
+export { default as sec3Img } from "./imgs/HomePage/sec3Img.png";
+export { default as pinAppple } from "./imgs/HomePage/pineappleLg.webp";
+export { default as orange } from "./imgs/HomePage/orange.webp";
+export { default as curve } from "./imgs/HomePage/curve.svg";

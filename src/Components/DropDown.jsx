@@ -27,7 +27,7 @@ export default function DropDown({ title, children, styles, ...rest }) {
   return (
     <div
       {...rest}
-      className={cn("relative", rest?.className)}
+      className={cn("relative ", rest?.className)}
       onClick={() => setShowDetails(!showDetails)}
       ref={ref}
     >

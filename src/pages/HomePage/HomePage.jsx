@@ -15,11 +15,14 @@ import { cn } from "../../Utils/cn";
 import { useFetchDonutsQuery } from "../../store";
 //---------------------------------------------------------------
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { CiCircleChevLeft } from "react-icons/ci";
 import { CiCircleChevRight } from "react-icons/ci";
+import { Button, Marquee, Carousel } from "../../Components";
+import { FaArrowRight } from "react-icons/fa6";
+
 //-----------------------------------------------------------------
 
 const colorPalette = [
@@ -48,6 +51,8 @@ const colorPalette = [
 export default function HomePage() {
   const homePage = useChangeColor(colorPalette);
   const reviewCarousel = useRef(null);
+  const [isMd, setIsMd] = useState(window.innerWidth <= 768);
+  useDoOnResize(() => setIsMd(window.innerWidth <= 768));
 
   const { data, error, isFetching } = useFetchDonutsQuery();
   let monthlySpecial = null;
@@ -114,11 +119,8 @@ export default function HomePage() {
     );
   }
 
-  const [isMd, setIsMd] = useState(window.innerWidth <= 768);
-  useDoOnResize(() => setIsMd(window.innerWidth <= 768));
   //---------------------------------------------------
 
-  //-------------------------------------------------
   return (
     <main
       className="relative overflow-y-visible overflow-x-clip bg-[--body-bg] text-[--body-text] transition-colors duration-500"
@@ -176,46 +178,32 @@ export default function HomePage() {
           backgroundColor: `var(--md-white)`,
         }}
       >
-        <Swiper
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            allowTouchMove: false,
-          }}
-          speed={10000}
-          slidesPerView="auto"
-          loop={true}
-          freeMode={true}
-          direction="horizontal"
-          className="w-full"
-        >
-          {Array(3)
-            .fill(0)
-            .map((_, index) => (
-              <SwiperSlide key={index} className="w-[700px]">
-                <div className="text-nowrap h-[--md-nav-hight]  flex gap-4  justify-center items-center bg-[#bad79d] ">
-                  <div className="sm:w-12 w-8 shrink-0">
-                    <img
-                      src={greenPalm}
-                      className="size-full object-center object-cover"
-                    />
-                  </div>
+        <Marquee className="w-full" slidesCount={3}>
+          <div className="px-4 text-nowrap h-[--md-nav-hight]  flex gap-4  justify-center items-center bg-[#bad79d] ">
+            <div className="sm:w-12 w-8 shrink-0">
+              <img
+                src={greenPalm}
+                className="size-full object-center object-cover"
+              />
+            </div>
 
-                  <div className="uppercase text-2xl font-bold">
-                    cookies available for nationwide delivery
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-        </Swiper>
+            <div className="uppercase text-2xl font-bold">
+              cookies available for nationwide delivery
+            </div>
+          </div>
+        </Marquee>
 
         <div className="flex flex-col justify-center items-center gap-16 p-8 lg:p-24 md:text-3xl text-2xl text-center">
           <div>
             <img src={girl} alt="" />
           </div>
           <div>{content.section2}</div>
-          <div>button</div>
+          <Button>
+            <div className="flex justify-center items-center gap-4">
+              about us
+              <FaArrowRight />
+            </div>
+          </Button>
         </div>
 
         <div className="pt-[calc(var(--md-nav-hight)+1rem)]  h-screen  flex flex-col justify-around">
@@ -233,7 +221,12 @@ export default function HomePage() {
           </div>
           <div className="flex-1 lg:flex-initial lg:gap-16   flex flex-col items-center justify-evenly lg:justify-between text-3xl ">
             <div>{content.createYourOwnBox}</div>
-            <button>button</button>
+            <Button>
+              <div className="flex justify-center items-center gap-4">
+                shop all
+                <FaArrowRight />
+              </div>
+            </Button>
           </div>
         </div>
 
@@ -253,7 +246,12 @@ export default function HomePage() {
           <div className="p-4 text-2xl leading-tight tracking-tighter  capitalize">
             {content.section4.paragraph}
           </div>
-          <button>buttoon</button>
+          <Button>
+            <div className="flex justify-center items-center gap-4">
+              find out more
+              <FaArrowRight />
+            </div>
+          </Button>
           <div className="hidden md:block w-1/3 absolute left-0 bottom-0  -z-10">
             <img
               src={pinAppple}

@@ -2,14 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --md-nav-hight: 85px;
-}
-
 .swiper-wrapper {
   -webkit-transition-timing-function: linear !important;
   -o-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
+}
+
+:root {
+  --md-nav-hight: 85px;
+  /*-----------colors-------------*/
+  --md-pink: #f687ad;
+  --lg-pink: #ae1d74;
+  --md-white: #ffeaec;
+  --yellow: #e2b208;
+  --green: #76bd51;
+
+  /*---------body bg&text-----------*/
+
+  --body-bg: var(--md-pink);
+  --body-text: white;
 }
 
 /* * {

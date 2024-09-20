@@ -8,19 +8,11 @@ import {
   sec3Img,
   pinAppple,
   orange,
-  curve,
 } from "../../assets/constants";
-import { useDoOnResize } from "../../hooks";
-import { useState } from "react";
+import { useDoOnResize, useChangeColor } from "../../hooks";
+import { useState, useRef } from "react";
 import { cn } from "../../Utils/cn";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/src/ScrollTrigger";
-import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger);
-import { useDispatch } from "react-redux";
-import { modifyColor, useFetchDonutsQuery } from "../../store";
-import { useSelector } from "react-redux";
+import { useFetchDonutsQuery } from "../../store";
 //---------------------------------------------------------------
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -29,19 +21,36 @@ import "swiper/css/navigation";
 import { CiCircleChevLeft } from "react-icons/ci";
 import { CiCircleChevRight } from "react-icons/ci";
 //-----------------------------------------------------------------
+
 const colorPalette = [
-  "bg-[#f687ad] text-white",
-  "text-primary-text bg-primary-bg",
-  "bg-[#e2b208] text-white",
-  "bg-[#76bd51] text-white",
+  {
+    target: ".sec-1",
+    bg: "var(--md-pink)",
+    text: "white",
+  },
+  {
+    target: ".sec-2",
+    bg: "var(--md-white)",
+    text: "var(--lg-pink)",
+  },
+  {
+    target: ".sec-3",
+    bg: "var(--yellow)",
+    text: "white",
+  },
+  {
+    target: ".sec-4",
+    bg: "var(--green)",
+    text: "white",
+  },
 ];
 //-----------------------------------------------------------------
 export default function HomePage() {
+  const homePage = useChangeColor(colorPalette);
   const reviewCarousel = useRef(null);
-  const navBarColor = useSelector((state) => state.navBarColor);
+
   const { data, error, isFetching } = useFetchDonutsQuery();
   let monthlySpecial = null;
-
   if (isFetching) {
     monthlySpecial = <div className="text-center">is fetching ......</div>;
   } else if (error) {
@@ -101,43 +110,17 @@ export default function HomePage() {
     );
   }
 
-  const dispatch = useDispatch();
-  const homePage = useRef(null);
   const [isMd, setIsMd] = useState(window.innerWidth <= 768);
   useDoOnResize(() => setIsMd(window.innerWidth <= 768));
   //---------------------------------------------------
-  useGSAP(
-    () => {
-      const sections = [".sec-1", ".sec-2", ".sec-3", ".sec-4"];
-      sections.forEach((sec, index) => {
-        ScrollTrigger.create({
-          trigger: sec,
-          start: "clamp(top bottom",
-          end: "clamp(bottom top)",
 
-          onEnter: () => {
-            dispatch(modifyColor(colorPalette[index]));
-          },
-          onEnterBack: () => {
-            dispatch(modifyColor(colorPalette[index]));
-          },
-        });
-      });
-    },
-    { scope: homePage }
-  );
   //-------------------------------------------------
   return (
     <main
-      className="relative overflow-y-visible overflow-x-clip"
+      className="relative overflow-y-visible overflow-x-clip bg-[--body-bg] text-[--body-text] transition-colors duration-500"
       ref={homePage}
     >
-      <section
-        className={cn(
-          "sec-1  pt-[calc(var(--md-nav-hight)+1rem)] h-screen flex flex-col justify-end md:justify-between gap-4 items-center ",
-          colorPalette[0]
-        )}
-      >
+      <section className="sec-1  pt-[calc(var(--md-nav-hight)+1rem)] h-screen flex flex-col justify-end md:justify-between gap-4 items-center ">
         <div>
           <div className="w-full h-32 md:h-44">
             <svg
@@ -182,7 +165,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={cn("sec-2 ", colorPalette[1])}>
+      <section
+        className="sec-2"
+        style={{
+          color: `var(--lg-pink)`,
+          backgroundColor: `var(--md-white)`,
+        }}
+      >
         <Swiper
           modules={[Autoplay]}
           autoplay={{
@@ -238,9 +227,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        className={cn(" sec-3 transition-color duration-300 ", navBarColor)}
-      >
+      <section className=" sec-3 transition-color duration-300 ">
         <div className="px-8 md:px-16 pt-[calc(var(--md-nav-hight)+1rem)]  h-screen  flex flex-col justify-evenly lg:flex-row items-center   lg:items-start text-center lg:text-left lg:gap-16 ">
           <div className=" text-6xl lg:text-7xl   font-extrabold uppercase lg:sticky lg:top-[calc(var(--md-nav-hight)+1rem)] ">
             create your own box
@@ -255,12 +242,7 @@ export default function HomePage() {
           <img src={sec3Img} className="size-full object-cover object-center" />
         </div>
       </section>
-      <section
-        className={cn(
-          "sec-4 isolate transition-colors duration-300 ",
-          navBarColor
-        )}
-      >
+      <section className="sec-4 isolate transition-colors duration-300 ">
         <div className="hidden md:block w-1/2 ml-auto translate-y-[40%]">
           <img src={orange} className="size-full object-cover object-center" />
         </div>
@@ -285,7 +267,7 @@ export default function HomePage() {
           className={`h-screen flex flex-col items-center justify-center gap-16 text-center`}
         >
           <svg
-            className={cn("fill-current w-40 h-40", navBarColor)}
+            className="fill-current w-40 h-40"
             viewBox="0 0 38 55"
             width="38"
             height="55"

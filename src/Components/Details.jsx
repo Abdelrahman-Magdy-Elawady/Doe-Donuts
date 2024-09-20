@@ -31,7 +31,10 @@ const Details = ({ title, children, styles, ...rest }) => {
   return (
     <div
       {...rest}
-      className={cn("relative", rest?.className)}
+      className={cn(
+        "relative support-hover:hover:cursor-pointer",
+        rest?.className
+      )}
       onClick={() => setShowDetails(!showDetails)}
       ref={ref}
     >

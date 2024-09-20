@@ -52,10 +52,14 @@ export default function HomePage() {
   const { data, error, isFetching } = useFetchDonutsQuery();
   let monthlySpecial = null;
   if (isFetching) {
-    monthlySpecial = <div className="text-center">is fetching ......</div>;
+    monthlySpecial = (
+      <div className="text-center text-3xl font-bold">is fetching ......</div>
+    );
   } else if (error) {
     monthlySpecial = (
-      <div className="text-center">Error loading Food .....</div>
+      <div className="text-center text-3xl font-bold">
+        Error loading Food .....
+      </div>
     );
   } else {
     monthlySpecial = (
@@ -214,12 +218,7 @@ export default function HomePage() {
           <div>button</div>
         </div>
 
-        <div
-          className={cn(
-            "pt-[calc(var(--md-nav-hight)+1rem)]  h-screen  flex flex-col justify-around",
-            colorPalette[1]
-          )}
-        >
+        <div className="pt-[calc(var(--md-nav-hight)+1rem)]  h-screen  flex flex-col justify-around">
           <p className="text-center xl:text-7xl md:text-5xl text-3xl  font-extrabold uppercase">
             monthly specials
           </p>
@@ -248,7 +247,7 @@ export default function HomePage() {
         </div>
 
         <div className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen text-center flex flex-col items-center justify-around relative">
-          <div className="max-w-[768px] leading-tight tracking-tighter text-6xl lg:text-7xl  font-extrabold uppercase ">
+          <div className="max-w-[768px] leading-tight tracking-tighter text-6xl lg:text-7xl  font-extrabold uppercase px-4">
             {content.section4.title}
           </div>
           <div className="p-4 text-2xl leading-tight tracking-tighter  capitalize">

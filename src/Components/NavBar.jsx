@@ -27,7 +27,7 @@ export default function NavBar() {
       path: "",
       label: "loyality program",
     },
-  ].map((tab, i) => <div key={i}>{tab.label}</div>);
+  ].map((tab, i) => <Link key={i}>{tab.label}</Link>);
 
   const dropDownLinks = [
     {
@@ -54,7 +54,7 @@ export default function NavBar() {
 
   //----------------------------------------------------------
   return (
-    <div className="fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md z-50 bg-[--body-bg] text-[--body-text] transition-colors duration-300">
+    <div className="fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md z-50 bg-[--body-bg] text-[--body-text] transition-colors duration-300 ">
       <Link to="/" className=" order-2 lg:order-1">
         <svg
           width="129"
@@ -100,8 +100,7 @@ export default function NavBar() {
             title="about"
             className="hidden lg:block font-bold uppercase "
             styles={{
-              list: "w-44 p-4 gap-4 mt-[calc(var(--md-nav-hight)/2)] bg-[--body-bg]",
-              title: "support-hover:hover:underline",
+              list: " w-44 p-4 gap-6 mt-[calc(var(--md-nav-hight)/2)] bg-[--body-bg] shadow-xl [border-radius:0_0_10px_10px] ",
             }}
           >
             {dropDownLinks}
@@ -111,8 +110,7 @@ export default function NavBar() {
             className="block lg:hidden font-bold uppercase"
             styles={{
               list: "w-full lg:p-4 gap-8  lg:mt-[calc(var(--md-nav-hight)/2)] py-4 ",
-              title:
-                "flex items-center justify-between gap-2 support-hover:hover:underline py-2",
+              title: "flex items-center justify-between gap-2  py-2",
             }}
           >
             {dropDownLinks}

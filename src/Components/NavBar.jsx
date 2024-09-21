@@ -16,7 +16,7 @@ export default function NavBar() {
   //---------------------------------------------------------------------
   const links = [
     {
-      path: "",
+      path: "/corporate",
       label: "corporate + custom",
     },
     {
@@ -27,7 +27,11 @@ export default function NavBar() {
       path: "",
       label: "loyality program",
     },
-  ].map((tab, i) => <Link key={i}>{tab.label}</Link>);
+  ].map((tab, i) => (
+    <Link key={i} to={tab.path}>
+      {tab.label}
+    </Link>
+  ));
 
   const dropDownLinks = [
     {
@@ -54,7 +58,7 @@ export default function NavBar() {
 
   //----------------------------------------------------------
   return (
-    <div className="fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md z-50 bg-[--body-bg] text-[--body-text] transition-colors duration-300 ">
+    <div className="fixed inset-x-0 h-[--md-nav-hight] flex justify-between items-center px-4 overscroll-contain shadow-md z-50 bg-[--body-bg] text-[--body-text] transition-colors duration-300">
       <Link to="/" className=" order-2 lg:order-1">
         <svg
           width="129"
@@ -77,6 +81,7 @@ export default function NavBar() {
           <path d="M123.789 18.4284C123.737 18.4284 123.685 18.4284 123.633 18.4284C122.887 18.4284 122.431 17.9257 122.275 17.3075C122.182 16.9378 122.177 16.5565 122.281 16.1925C122.425 15.6667 122.766 15.3201 123.292 15.1583C123.661 15.0427 124.037 15.0601 124.401 15.1641C124.511 15.1929 124.621 15.2507 124.713 15.3143C124.921 15.4529 125.094 15.6263 125.262 15.8054C125.505 16.0711 125.562 16.4005 125.597 16.7356C125.684 17.5618 125.135 18.1048 124.615 18.2897C124.482 18.336 124.343 18.388 124.205 18.4168C124.066 18.4457 123.921 18.4399 123.777 18.4515C123.789 18.4399 123.789 18.4342 123.789 18.4284ZM123.945 17.4866C123.973 17.4809 124.089 17.4809 124.205 17.4578C124.586 17.3827 124.788 17.0649 124.719 16.6836C124.644 16.2445 124.262 15.9729 123.881 15.9383C123.604 15.9151 123.298 16.0307 123.188 16.3774C123.113 16.62 123.107 16.8627 123.142 17.1053C123.165 17.2729 123.263 17.3827 123.43 17.4289C123.575 17.4693 123.713 17.4924 123.945 17.4866Z"></path>
         </svg>
       </Link>
+
       <div
         className="h-full flex justify-center items-center gap-8 font-bold uppercase order-3 lg:order-2"
         ref={ref}
@@ -98,9 +103,9 @@ export default function NavBar() {
         >
           <DropDown
             title="about"
-            className="hidden lg:block font-bold uppercase "
+            className="hidden lg:block font-bold uppercase"
             styles={{
-              list: " w-44 p-4 gap-6 mt-[calc(var(--md-nav-hight)/2)] bg-[--body-bg] shadow-xl [border-radius:0_0_10px_10px] ",
+              list: " w-48 px-4 py-6 gap-6  mt-[calc(var(--md-nav-hight)/2+.5px)] bg-[--body-bg] shadow-xl [border-radius:0_0_10px_10px]",
             }}
           >
             {dropDownLinks}

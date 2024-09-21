@@ -1,39 +1,32 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
-import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
-const UseChangeColor = (sectionPalette) => {
-  const ref = useRef(null);
+const UseChangeColor = (ref, palette) => {
   useGSAP(
     () => {
-      sectionPalette?.forEach((section) => {
+      palette?.forEach((section) => {
         ScrollTrigger.create({
-          trigger: section.target,
+          trigger: section?.target,
           start: "clamp(top bottom",
           end: "clamp(bottom top)",
 
           onEnter: () => {
-            document.documentElement.style.setProperty("--body-bg", section.bg);
-            document.documentElement.style.setProperty(
-              "--body-text",
-              section.text
-            );
+            Object.entries(section?.style).forEach(([key, value]) => {
+              document.documentElement.style.setProperty(key, value);
+            });
           },
           onEnterBack: () => {
-            document.documentElement.style.setProperty("--body-bg", section.bg);
-            document.documentElement.style.setProperty(
-              "--body-text",
-              section.text
-            );
+            Object.entries(section?.style).forEach(([key, value]) => {
+              document.documentElement.style.setProperty(key, value);
+            });
           },
         });
       });
     },
     { scope: ref }
   );
-  return ref;
 };
 
 export default UseChangeColor;

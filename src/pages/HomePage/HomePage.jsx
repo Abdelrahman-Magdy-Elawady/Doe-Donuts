@@ -1,3 +1,4 @@
+import Marquee from "react-fast-marquee";
 import { content } from "./constants";
 import {
   heroImg,
@@ -8,49 +9,62 @@ import {
   sec3Img,
   pinAppple,
   orange,
+  viva,
+  mindfood,
+  saben,
+  stuff,
+  otv,
+  businessDesk,
 } from "../../assets/constants";
-import { useDoOnResize, useChangeColor } from "../../hooks";
-import { useState, useRef } from "react";
+import { useDoOnResize, useChangeColor, useCssVarSetter } from "../../hooks";
+import { useState } from "react";
 import { cn } from "../../Utils/cn";
 import { useFetchDonutsQuery } from "../../store";
 //---------------------------------------------------------------
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Button, Carousel } from "../../Components";
 import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import { CiCircleChevLeft } from "react-icons/ci";
-import { CiCircleChevRight } from "react-icons/ci";
-import { Button, Marquee, Carousel } from "../../Components";
 import { FaArrowRight } from "react-icons/fa6";
-
+import { useRef } from "react";
 //-----------------------------------------------------------------
 
 const colorPalette = [
   {
     target: ".sec-1",
-    bg: "var(--md-pink)",
-    text: "white",
+    style: {
+      "--body-bg": "var(--md-pink)",
+      "--body-text": "white",
+    },
   },
   {
     target: ".sec-2",
-    bg: "var(--md-white)",
-    text: "var(--lg-pink)",
+    style: {
+      "--body-bg": "var(--md-white)",
+      "--body-text": "var(--lg-pink)",
+    },
   },
   {
     target: ".sec-3",
-    bg: "var(--yellow)",
-    text: "white",
+    style: {
+      "--body-bg": "var(--yellow)",
+      "--body-text": "white",
+    },
   },
   {
     target: ".sec-4",
-    bg: "var(--green)",
-    text: "white",
+    style: {
+      "--body-bg": "var(--green)",
+      "--body-text": "white",
+    },
   },
 ];
 //-----------------------------------------------------------------
 export default function HomePage() {
-  const homePage = useChangeColor(colorPalette);
-  const reviewCarousel = useRef(null);
+  const homePage = useRef(null);
+  useChangeColor(homePage, colorPalette);
+  useCssVarSetter({
+    "--body-bg": "var(--md-pink)",
+    "--body-text": "white",
+  });
   const [isMd, setIsMd] = useState(window.innerWidth <= 768);
   useDoOnResize(() => setIsMd(window.innerWidth <= 768));
 
@@ -68,54 +82,55 @@ export default function HomePage() {
     );
   } else {
     monthlySpecial = (
-      <Swiper
-        modules={[Navigation]}
-        navigation={true}
-        speed={1000}
-        slidesPerView="auto"
-        loop={true}
-        className="w-full"
-        centeredSlides={true}
+      <Carousel
+        config={{
+          modules: [Navigation],
+          speed: 500,
+          slidesPerView: "auto",
+          loop: true,
+          centeredSlides: true,
+        }}
+        buttons={true}
+        styles={{
+          slide:
+            " [--gap:20px] mx-[--gap] w-full md:w-[calc(50%-var(--gap))] xl:w-[calc(30%-var(--gap))] py-1",
+        }}
       >
-        {Array(2).fill(
-          data
-            .filter((donut) => donut.monthlySpecial)
-            .map((donutMonthlySpecial) => (
-              <SwiperSlide
-                key={donutMonthlySpecial.id}
-                className="[--gap:20px] mx-[--gap] w-full md:w-[calc(50%-var(--gap))] xl:w-[calc(30%-var(--gap))]"
-              >
-                <div className="flex flex-col gap-8 shadow-lg p-4 rounded-md h-[33rem]">
-                  <div className="w-full  h-96 rounded-2xl  overflow-hidden relative isolate">
-                    <img
-                      src={donutMonthlySpecial.img}
-                      alt={donutMonthlySpecial.name}
-                      className="size-full object-cover object-center  hover:scale-105 transition-transform duration-300"
-                    />
-                    <div
-                      className="w-24 aspect-square absolute z-50 top-0 right-0 flex flex-col justify-center items-center rotate-12"
-                      style={{
-                        backgroundImage: `url(${monthlySpecialImg})`,
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                    >
-                      <span>monthly</span>
-                      <span>specials</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center font-extrabold ">
-                    <div className="text-xl md:text-2xl lg:text-3xl uppercase">
-                      {donutMonthlySpecial.name}
-                    </div>
-                    <div className="text-xl">{donutMonthlySpecial.cost} $</div>
-                  </div>
+        {data
+          .filter((donut) => donut.monthlySpecial)
+          .map((donutMonthlySpecial) => (
+            <div
+              key={donutMonthlySpecial.id}
+              className="flex flex-col gap-8 shadow-lg p-4 rounded-md h-[33rem]"
+            >
+              <div className="w-full  h-96 rounded-2xl  overflow-hidden relative isolate">
+                <img
+                  src={donutMonthlySpecial.img}
+                  alt={donutMonthlySpecial.name}
+                  className="size-full object-cover object-center  hover:scale-105 transition-transform duration-300"
+                />
+                <div
+                  className="w-24 aspect-square absolute z-50 top-0 right-0 flex flex-col justify-center items-center rotate-12"
+                  style={{
+                    backgroundImage: `url(${monthlySpecialImg})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  <span>monthly</span>
+                  <span>specials</span>
                 </div>
-              </SwiperSlide>
-            ))
-        )}
-      </Swiper>
+              </div>
+              <div className="flex justify-between items-center font-extrabold ">
+                <div className="text-xl md:text-2xl lg:text-3xl uppercase">
+                  {donutMonthlySpecial.name}
+                </div>
+                <div className="text-xl">{donutMonthlySpecial.cost} $</div>
+              </div>
+            </div>
+          ))}
+      </Carousel>
     );
   }
 
@@ -178,8 +193,8 @@ export default function HomePage() {
           backgroundColor: `var(--md-white)`,
         }}
       >
-        <Marquee className="w-full" slidesCount={3}>
-          <div className="px-4 text-nowrap h-[--md-nav-hight]  flex gap-4  justify-center items-center bg-[#bad79d] ">
+        <Marquee autoFill={true}>
+          <div className="px-4 text-nowrap h-[--md-nav-hight]  flex gap-4  justify-center items-center bg-[#bad79d] min-w-[max-content] ">
             <div className="sm:w-12 w-8 shrink-0">
               <img
                 src={greenPalm}
@@ -234,6 +249,7 @@ export default function HomePage() {
           <img src={sec3Img} className="size-full object-cover object-center" />
         </div>
       </section>
+
       <section className="sec-4 isolate transition-colors duration-300 ">
         <div className="hidden md:block w-1/2 ml-auto translate-y-[40%]">
           <img src={orange} className="size-full object-cover object-center" />
@@ -277,49 +293,55 @@ export default function HomePage() {
             </g>
           </svg>
 
-          <div className="w-full lg:w-[1024px] min-h-44 px-8 md:px-16">
-            <Swiper
-              modules={[Navigation]}
-              onBeforeInit={(swiper) => {
-                reviewCarousel.current = swiper;
-              }}
-              speed={500}
-              slidesPerView="auto"
-              loop={true}
-              centeredSlides={true}
-              cssMode={true}
-            >
-              {content.section4.carousel.map((rev) => (
-                <SwiperSlide key={rev.owner} className="w-full h-full">
-                  <div className="h-full flex flex-col items-center justify-center text-xl  md:text-3xl gap-8">
-                    <div>{rev.review}</div>
-                    <div className="flex items-center justify-center gap-4">
-                      <div>{rev.owner}</div>
-                      <a
-                        href={rev.link}
-                        target="_blank"
-                        className="capitalize underline"
-                      >
-                        read google review
-                      </a>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className="flex items-center justify-center gap-16 mt-8">
-              <CiCircleChevLeft
-                onClick={() => reviewCarousel.current?.slidePrev()}
-                className="text-5xl support-hover:hover:cursor-pointer support-hover:hover:text-black transition-colors duration-300"
-              />
-              <CiCircleChevRight
-                onClick={() => reviewCarousel.current?.slideNext()}
-                className="text-5xl support-hover:hover:cursor-pointer support-hover:hover:text-black transition-colors duration-300"
-              />
-            </div>
-          </div>
+          <Carousel
+            config={{
+              modules: [Navigation],
+              speed: 500,
+              slidesPerView: "auto",
+              loop: true,
+              centeredSlides: true,
+              cssMode: true,
+            }}
+            buttons={true}
+            className="w-full lg:w-[1024px] min-h-44 px-8 md:px-16"
+          >
+            {content.section4.carousel.map((rev) => (
+              <div
+                key={rev.owner}
+                className="h-full flex flex-col items-center justify-center text-xl  md:text-3xl gap-8"
+              >
+                <div>{rev.review}</div>
+                <div className="flex items-center justify-center gap-4">
+                  <div>{rev.owner}</div>
+                  <a
+                    href={rev.link}
+                    target="_blank"
+                    className="capitalize underline"
+                  >
+                    read google review
+                  </a>
+                </div>
+              </div>
+            ))}
+          </Carousel>
         </div>
+
+        <Marquee className="py-8 ">
+          <div className="gap-8 px-4 flex justify-center items-center">
+            {[viva, mindfood, saben, stuff, otv, businessDesk].map(
+              (img, index) => (
+                <div key={index} className=" h-20 flex-shrink-0">
+                  <img
+                    src={img}
+                    className="size-full object-contain object-center"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </Marquee>
       </section>
+
       <svg
         width="1728"
         height="226"

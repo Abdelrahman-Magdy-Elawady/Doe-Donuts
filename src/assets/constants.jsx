@@ -8,3 +8,18 @@ export { default as sec3Img } from "./imgs/HomePage/sec3Img.png";
 export { default as pinAppple } from "./imgs/HomePage/pineappleLg.webp";
 export { default as orange } from "./imgs/HomePage/orange.webp";
 export { default as curve } from "./imgs/HomePage/curve.svg";
+export { default as viva } from "./imgs/HomePage/viva.png";
+export { default as mindfood } from "./imgs/HomePage/mindfood.png";
+export { default as saben } from "./imgs/HomePage/saben.png";
+export { default as stuff } from "./imgs/HomePage/stuff.png";
+export { default as otv } from "./imgs/HomePage/otv.png";
+export { default as businessDesk } from "./imgs/HomePage/businessDesk.png";
+//-----------------------------------------------------------------------
+export { default as corporateHeroImg } from "./imgs/CorporatePage/heroImg.webp";
+export { default as corporate_product1 } from "./imgs/CorporatePage/mcclures-pickle.png";
+export { default as corporate_product2 } from "./imgs/CorporatePage/burger.webp";
+export { default as corporate_product3 } from "./imgs/CorporatePage/conuts.png";
+export { default as corporate_product4 } from "./imgs/CorporatePage/three.png";
+export { default as corporate_product5 } from "./imgs/CorporatePage/stroop-wafels.png";
+export { default as corporate_product6 } from "./imgs/CorporatePage/otis.jpg";
+//--------------------------------------------------------------------------

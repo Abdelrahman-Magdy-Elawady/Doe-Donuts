@@ -22,4 +22,5 @@ export { default as corporate_product3 } from "./imgs/CorporatePage/conuts.png";
 export { default as corporate_product4 } from "./imgs/CorporatePage/three.png";
 export { default as corporate_product5 } from "./imgs/CorporatePage/stroop-wafels.png";
 export { default as corporate_product6 } from "./imgs/CorporatePage/otis.jpg";
+export { default as whereToNext } from "./imgs/CorporatePage/whererTonextImg.webp";
 //--------------------------------------------------------------------------

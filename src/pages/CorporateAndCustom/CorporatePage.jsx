@@ -7,13 +7,14 @@ import {
   corporate_product4,
   corporate_product5,
   corporate_product6,
+  whereToNext,
 } from "../../assets/constants";
 import { useChangeColor, useCssVarSetter, useMediaQuery } from "../../hooks";
 import { useRef } from "react";
-import { Carousel, Button, Stepper } from "../../Components";
+import { Carousel, Button, Stepper, CurveBottom } from "../../Components";
 import { Navigation } from "swiper/modules";
 import { FaArrowDown } from "react-icons/fa";
-
+import CorporateForm from "./CorporateForm";
 //------------------------------------------------
 const colorPalette = [
   {
@@ -23,27 +24,20 @@ const colorPalette = [
       "--body-text": "white",
     },
   },
-  // {
-  //   target: ".sec-2",
-  //   style: {
-  //     "--body-bg": "var(--md-white)",
-  //     "--body-text": "var(--lg-pink)",
-  //   },
-  // },
-  // {
-  //   target: ".sec-3",
-  //   style: {
-  //     "--body-bg": "var(--yellow)",
-  //     "--body-text": "white",
-  //   },
-  // },
-  // {
-  //   target: ".sec-4",
-  //   style: {
-  //     "--body-bg": "var(--green)",
-  //     "--body-text": "white",
-  //   },
-  // },
+  {
+    target: ".sec-3",
+    style: {
+      "--body-bg": "var(--yellow)",
+      "--body-text": "white",
+    },
+  },
+  {
+    target: ".sec-4",
+    style: {
+      "--body-bg": "var(--green)",
+      "--body-text": "white",
+    },
+  },
 ];
 //-------------------------------------------------
 const CorporatePage = () => {
@@ -57,7 +51,7 @@ const CorporatePage = () => {
 
   return (
     <main
-      className=" bg-[--body-bg] text-[--body-text] transition-colors duration-500"
+      className="relative bg-[--body-bg] text-[--body-text] transition-colors duration-500"
       ref={ref}
     >
       <section
@@ -79,7 +73,7 @@ const CorporatePage = () => {
           />
         </div>
       </section>
-      <section className="sec-2 pt-[calc(var(--md-nav-hight)+.25rem)]">
+      <section className=" pt-[calc(var(--md-nav-hight)+.25rem)]">
         <h1 className="uppercase font-extrabold text-6xl  text-center  px-6 max-w-[1024px] mx-auto">
           {content.section2.title}
         </h1>
@@ -120,7 +114,7 @@ const CorporatePage = () => {
           ))}
         </Carousel>
       </section>
-      <section className="pt-[calc(var(--md-nav-hight)+.25rem)] flex flex-col justify-center items-center gap-16">
+      <section className="sec-3 pt-[calc(var(--md-nav-hight)+.25rem)] flex flex-col justify-center items-center gap-16 pb-24">
         <h1 className="text-6xl font-extrabold uppercase text-center ">
           how it works
         </h1>
@@ -130,8 +124,50 @@ const CorporatePage = () => {
             <FaArrowDown />
           </a>
         </Button>
-        <Stepper />
+
+        <Stepper
+          className="px-4"
+          config={{
+            stepperStyle: "text-[--yellow]  bg-white font-extrabold text-3xl",
+            stepperStyleAnimation: "rounded-xl text-4xl",
+          }}
+        >
+          {content.section3.map((step, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center items-center text-center gap-4 py-6"
+            >
+              <div className="text-2xl font-semibold uppercase">
+                {step.title}
+              </div>
+              <div className="text-md lg:text-lg">{step.paragraph}</div>
+            </div>
+          ))}
+        </Stepper>
       </section>
+      <section className="sec-4 pt-[calc(var(--md-nav-hight)+.25rem)]">
+        <h1 className="uppercase font-extrabold text-[3.5rem] leading-none   text-center  max-w-[1024px] mx-auto px-2">
+          corporate and custom order form
+        </h1>
+        <CorporateForm />
+      </section>
+      <section className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen lg:h-[150vh]  relative border-2">
+        <h1 className="uppercase font-extrabold text-6xl leading-none   text-center   mx-auto px-16 lg:text-left flex flex-col lg:flex-row sticky top-[calc(var(--md-nav-hight)+1rem)] pb-40 lg:pb-[35rem]  border-2">
+          <span> where to </span>
+          <span>next?</span>
+        </h1>
+        <div className="absolute inset-0 ">
+          <img
+            src={whereToNext}
+            alt=""
+            className="size-full object-contain "
+            style={{
+              objectPosition: "left bottom",
+            }}
+          />
+        </div>
+      </section>
+      <CurveBottom />
     </main>
   );
 };

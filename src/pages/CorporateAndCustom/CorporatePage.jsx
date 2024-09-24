@@ -15,6 +15,8 @@ import { Carousel, Button, Stepper, CurveBottom } from "../../Components";
 import { Navigation } from "swiper/modules";
 import { FaArrowDown } from "react-icons/fa";
 import CorporateForm from "./CorporateForm";
+import { FaArrowRightLong } from "react-icons/fa6";
+
 //------------------------------------------------
 const colorPalette = [
   {
@@ -47,7 +49,6 @@ const CorporatePage = () => {
     "--body-text": "white",
   });
   useChangeColor(ref, colorPalette);
-  const { isSm, isMd, isLg, isXl, is2Xl } = useMediaQuery();
 
   return (
     <main
@@ -58,7 +59,7 @@ const CorporatePage = () => {
         className="sec-1 pt-[calc(var(--md-nav-hight)+.25rem)] min-h-screen relative flex justify-center items-center sm:items-start
       sm:justify-end isolate"
       >
-        <div className="text-center md:text-right uppercase font-extrabold text-5xl px-4 tracking-tighter py-8 sm:text-7xl lg:text-8xl xl:text-9xl">
+        <div className="text-center md:text-right uppercase font-extrabold  px-4 tracking-tighter py-8 text-5xl sm:text-7xl lg:text-8xl xl:text-9xl mb-[10vw]">
           {content.hero.title.map((paragraph, index) => (
             <div key={index}>{paragraph}</div>
           ))}
@@ -151,20 +152,29 @@ const CorporatePage = () => {
         </h1>
         <CorporateForm />
       </section>
-      <section className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen lg:h-[150vh]  relative border-2">
-        <h1 className="uppercase font-extrabold text-6xl leading-none   text-center   mx-auto px-16 lg:text-left flex flex-col lg:flex-row sticky top-[calc(var(--md-nav-hight)+1rem)] pb-40 lg:pb-[35rem]  border-2">
-          <span> where to </span>
-          <span>next?</span>
-        </h1>
-        <div className="absolute inset-0 ">
-          <img
-            src={whereToNext}
-            alt=""
-            className="size-full object-contain "
-            style={{
-              objectPosition: "left bottom",
-            }}
-          />
+      <section className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen lg:h-[150vh]  flex flex-col">
+        <div className="flex-1">
+          <h1 className="uppercase font-extrabold text-6xl leading-none   text-center   mx-auto px-16 lg:text-left flex flex-col lg:flex-row sticky top-[calc(var(--md-nav-hight)+1rem)]">
+            <span> where to </span>
+            <span>next?</span>
+          </h1>
+        </div>
+        <div className="relative flex-1 ">
+          <div className="absolute inset-0">
+            <img
+              src={whereToNext}
+              alt=""
+              className="size-full object-contain "
+              style={{
+                objectPosition: "right bottom",
+              }}
+            />
+          </div>
+          <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16">
+            <div className="flex justify-center items-center gap-2">
+              our donuts <FaArrowRightLong />
+            </div>
+          </Button>
         </div>
       </section>
       <CurveBottom />

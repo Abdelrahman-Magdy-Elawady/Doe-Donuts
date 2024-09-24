@@ -1,18 +1,24 @@
 import DropDown from "./DropDown";
 import HamBurgerIcon from "./HamBurgerIcon";
 import Details from "./Details";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { cn } from "../Utils/cn";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useDoOnResize, useClickOutside } from "../hooks";
 
 export default function NavBar() {
   //----------------------------------------------------------------
-
   const [showSideMenu, setShowSideMenu] = useState(window.innerWidth >= 1024);
   useDoOnResize(() => setShowSideMenu(window.innerWidth >= 1024));
   const ref = useClickOutside(() => setShowSideMenu(window.innerWidth >= 1024));
+  //---------------------------------------------------------------
+  const { key } = useLocation();
+  const [currentPath, setCurrentPath] = useState(key);
+  if (currentPath !== key) {
+    setCurrentPath(key);
+    setShowSideMenu(window.innerWidth >= 1024);
+  }
   //---------------------------------------------------------------------
   const links = [
     {
@@ -20,7 +26,7 @@ export default function NavBar() {
       label: "corporate + custom",
     },
     {
-      path: "",
+      path: "/contact",
       label: "contact",
     },
     {
@@ -35,7 +41,7 @@ export default function NavBar() {
 
   const dropDownLinks = [
     {
-      path: "/55",
+      path: "/aboutUs",
       label: "about us",
     },
     {

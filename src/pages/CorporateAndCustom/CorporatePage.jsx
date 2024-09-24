@@ -9,7 +9,7 @@ import {
   corporate_product6,
   whereToNext,
 } from "../../assets/constants";
-import { useChangeColor, useCssVarSetter, useMediaQuery } from "../../hooks";
+import { useChangeColor, useCssVarSetter } from "../../hooks";
 import { useRef } from "react";
 import { Carousel, Button, Stepper, CurveBottom } from "../../Components";
 import { Navigation } from "swiper/modules";
@@ -146,7 +146,7 @@ const CorporatePage = () => {
           ))}
         </Stepper>
       </section>
-      <section className="sec-4 pt-[calc(var(--md-nav-hight)+.25rem)]">
+      <section className="sec-4 pt-[calc(var(--md-nav-hight)+1rem)] ">
         <h1 className="uppercase font-extrabold text-[3.5rem] leading-none   text-center  max-w-[1024px] mx-auto px-2">
           corporate and custom order form
         </h1>

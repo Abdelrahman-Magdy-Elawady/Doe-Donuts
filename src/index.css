@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Script&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+source {
+  display: block;
+}
 .swiper-wrapper {
   -webkit-transition-timing-function: linear !important;
   -o-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
 }
-
 :root {
   --md-nav-hight: 85px;
   /*-----------colors-------------*/
@@ -16,6 +18,10 @@
   --md-white: #ffeaec;
   --yellow: #e2b208;
   --green: #76bd51;
+  --brillian-Rose: #f64f9d;
+  --megneta-pink: #f675b9;
+  --blush-Blossom: #fd7db8;
+  --blue: #019ffb;
 
   /*---------body bg&text-----------*/
 
@@ -28,10 +34,8 @@
 } */
 
 /* pt-[calc(var(--md-nav-hight)+1rem)] */
+
 /* 
-
-pb-40 lg:pb-[35rem]
-
 
 
 */

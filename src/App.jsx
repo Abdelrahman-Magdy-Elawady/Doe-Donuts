@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 //--------------------pages------------------------------
 import Root from "./pages/Root";
-import { HomePage, CorporatePage } from "./pages";
+import { HomePage, CorporatePage, ContactPage, AboutUsPage } from "./pages";
 
 //--------------------------------------------------
 const router = createBrowserRouter([
@@ -19,6 +19,15 @@ const router = createBrowserRouter([
         path: "/corporate",
         element: <CorporatePage />,
       },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUsPage />,
+      },
+
       // {
       //   path: "/category/:name",
       //   element: <CategoryPage />,

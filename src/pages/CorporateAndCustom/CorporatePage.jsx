@@ -52,7 +52,7 @@ const CorporatePage = () => {
 
   return (
     <main
-      className="relative bg-[--body-bg] text-[--body-text] transition-colors duration-500"
+      className="relative bg-[--body-bg] text-[--body-text] transition-colors duration-500 "
       ref={ref}
     >
       <section
@@ -152,29 +152,29 @@ const CorporatePage = () => {
         </h1>
         <CorporateForm />
       </section>
-      <section className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen lg:h-[150vh]  flex flex-col">
+      <section className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen lg:h-[150vh]  flex flex-col relative isolate">
         <div className="flex-1">
           <h1 className="uppercase font-extrabold text-6xl leading-none   text-center   mx-auto px-16 lg:text-left flex flex-col lg:flex-row sticky top-[calc(var(--md-nav-hight)+1rem)]">
             <span> where to </span>
             <span>next?</span>
           </h1>
         </div>
-        <div className="relative flex-1 ">
-          <div className="absolute inset-0">
-            <img
-              src={whereToNext}
-              alt=""
-              className="size-full object-contain "
-              style={{
-                objectPosition: "right bottom",
-              }}
-            />
-          </div>
+        <div className="relative flex-1">
           <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16">
             <div className="flex justify-center items-center gap-2">
               our donuts <FaArrowRightLong />
             </div>
           </Button>
+        </div>
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={whereToNext}
+            alt=""
+            className="size-full object-contain "
+            style={{
+              objectPosition: "right bottom",
+            }}
+          />
         </div>
       </section>
       <CurveBottom />

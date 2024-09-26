@@ -39,3 +39,16 @@ export { default as aboutUs_hero } from "../assets/imgs/AboutUsPage/hero.webp";
 export { default as aboutUs_donuts } from "../assets/imgs/AboutUsPage/donuts.webp";
 export { default as aboutUs_girls } from "../assets/imgs/AboutUsPage/girls.jpg";
 export { default as aboutUs_WhereToNext } from "../assets/imgs/AboutUsPage/whereTonext.webp";
+
+//-------------------------------HowItWorks Page-----------------
+export { default as howIW_hero } from "./imgs/howItWorks/hero.webp";
+export { default as howIW_tLDonuts } from "./imgs/howItWorks/timelineDonuts.svg";
+export { default as howIW_WTNext } from "./imgs/howItWorks/whereToNext.webp";
+
+//-----------------------------OurDonutsPage -------------------------
+export { default as ourDonuts_hero } from "./imgs/ourDonuts/hero.webp";
+export { default as ourDonuts_ingredient1 } from "./imgs/ourDonuts/ingredient1.png";
+export { default as ourDonuts_ingredient2 } from "./imgs/ourDonuts/ingredient2.webp";
+export { default as ourDonuts_ingredient3 } from "./imgs/ourDonuts/ingredien3.webp";
+export { default as ourDonuts_where2Next } from "./imgs/ourDonuts/whereTonext.webp";
+export { default as ourDonuts_hand } from "./imgs/ourDonuts/hand.svg";

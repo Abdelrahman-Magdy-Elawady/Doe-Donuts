@@ -7,19 +7,21 @@ import SplitType from "split-type";
 export default function useGradientCharsReveal(target, ref) {
   useGSAP(
     () => {
-      const { lines } = new SplitType(target);
-      lines.forEach((line) => {
-        gsap.from(line, {
-          stagger: 0.02,
-          autoAlpha: 0.3,
-          scrollTrigger: {
-            toggleActions: "play play reset reset",
-            trigger: line,
-            start: "top 55%",
-            end: "bottom bottom",
-            scrub: true,
-          },
-        });
+      const { chars } = new SplitType(target);
+      gsap.from(chars, {
+        stagger: {
+          from: "edges",
+          each: 0.25,
+        },
+        ease: "power1.inOut",
+        autoAlpha: 0.3,
+        scrollTrigger: {
+          toggleActions: "play play reset reset",
+          trigger: target,
+          start: "top 55%",
+          end: "bottom bottom",
+          scrub: 2,
+        },
       });
     },
     { scope: ref }

@@ -2,7 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 //--------------------pages------------------------------
 import Root from "./pages/Root";
-import { HomePage, CorporatePage, ContactPage, AboutUsPage } from "./pages";
+import {
+  HomePage,
+  CorporatePage,
+  ContactPage,
+  AboutUsPage,
+  HowItWorksPage,
+  OurDonutsPage,
+} from "./pages";
 
 //--------------------------------------------------
 const router = createBrowserRouter([
@@ -27,7 +34,14 @@ const router = createBrowserRouter([
         path: "/aboutUs",
         element: <AboutUsPage />,
       },
-
+      {
+        path: "/howItWorks",
+        element: <HowItWorksPage />,
+      },
+      {
+        path: "/ourDonuts",
+        element: <OurDonutsPage />,
+      },
       // {
       //   path: "/category/:name",
       //   element: <CategoryPage />,

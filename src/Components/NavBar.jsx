@@ -4,7 +4,7 @@ import Details from "./Details";
 import { Link, useLocation } from "react-router-dom";
 
 import { cn } from "../Utils/cn";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useDoOnResize, useClickOutside } from "../hooks";
 
 export default function NavBar() {
@@ -45,11 +45,11 @@ export default function NavBar() {
       label: "about us",
     },
     {
-      path: "",
+      path: "/howItWorks",
       label: "how it works",
     },
     {
-      path: "",
+      path: "/ourDonuts",
       label: "our donuts",
     },
     {

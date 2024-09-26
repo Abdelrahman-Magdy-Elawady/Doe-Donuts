@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Script&display=swap");
+@font-face {
+  font-family: "stylishFont";
+  src: local("stylishFont"),
+    url("./assets/fonts/Honofly.otf") format("opentype");
+  font-weight: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +19,7 @@ source {
 :root {
   --md-nav-hight: 85px;
   /*-----------colors-------------*/
+
   --md-pink: #f687ad;
   --lg-pink: #ae1d74;
   --md-white: #ffeaec;
@@ -22,6 +29,7 @@ source {
   --megneta-pink: #f675b9;
   --blush-Blossom: #fd7db8;
   --blue: #019ffb;
+  --soft-Sage: #b2d192;
 
   /*---------body bg&text-----------*/
 
@@ -32,8 +40,6 @@ source {
 /* * {
   border: 1px solid black;
 } */
-
-/* pt-[calc(var(--md-nav-hight)+1rem)] */
 
 /* 
 

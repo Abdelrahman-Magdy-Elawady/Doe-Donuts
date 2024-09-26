@@ -135,7 +135,7 @@ export default function AboutUsPage() {
         <div
           className="text-5xl font-extrabold text-center -rotate-12 my-16"
           style={{
-            fontFamily: '"League Script", cursive',
+            fontFamily: `"stylishFont",sans-serif`,
           }}
         >
           Shenine and

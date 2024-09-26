@@ -53,7 +53,7 @@ export default function NavBar() {
       label: "our donuts",
     },
     {
-      path: "",
+      path: "/ourLocations",
       label: "our locations",
     },
   ].map((nestedLink, index) => (

@@ -52,3 +52,7 @@ export { default as ourDonuts_ingredient2 } from "./imgs/ourDonuts/ingredient2.w
 export { default as ourDonuts_ingredient3 } from "./imgs/ourDonuts/ingredien3.webp";
 export { default as ourDonuts_where2Next } from "./imgs/ourDonuts/whereTonext.webp";
 export { default as ourDonuts_hand } from "./imgs/ourDonuts/hand.svg";
+//-----------------------------OurLocationsPage ------------------------
+
+export { default as ourLocations_hero } from "./imgs/ourLocations/hero.webp";
+export { default as ourLocations_WTN } from "./imgs/ourLocations/where2next.webp";

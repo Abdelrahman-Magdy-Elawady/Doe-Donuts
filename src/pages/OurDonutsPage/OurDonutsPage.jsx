@@ -79,10 +79,10 @@ export default function HowItWorksPage() {
         </h1>
 
         <div className="relative">
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 lg:ml-40">
             <img
               src={ourDonuts_hero}
-              className="size-full object-contain object-bottom"
+              className="size-full object-contain object-left-bottom"
             />
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function HowItWorksPage() {
           ))}
         </div>
       </section>
-      <section className="sec-5 md:grid md:grid-cols-2 min-h-[calc(100vh-var(--md-nav-hight))] py-40">
+      <section className="sec-5 md:grid md:grid-cols-2 min-h-[calc(100vh-var(--md-nav-hight))] pt-40">
         <div className="sticky top-[var(--md-nav-hight)] h-[calc(100vh-var(--md-nav-hight))] hidden md:block">
           <div className="absolute inset-0">
             <img
@@ -150,8 +150,13 @@ export default function HowItWorksPage() {
           </div>
         </div>
 
-        <div className="mx-8">
-          <h2 className="uppercase font-extrabold  text-4xl  lg:text-5xl  text-center p-4  bg-[--body-bg] sticky top-[var(--md-nav-hight)] border-b-2 [border-radius:0_0_10px_10px]">
+        <div className="sm:mx-8 mx-4">
+          <h2
+            className="uppercase font-extrabold  text-4xl  lg:text-5xl  text-center p-4 sticky top-[var(--md-nav-hight)] border-b-2 [border-radius:0_0_10px_10px]"
+            style={{
+              backdropFilter: "blur(20px)",
+            }}
+          >
             {section4.title}
           </h2>
 

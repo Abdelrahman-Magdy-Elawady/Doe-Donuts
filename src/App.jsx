@@ -9,6 +9,7 @@ import {
   AboutUsPage,
   HowItWorksPage,
   OurDonutsPage,
+  OurLocationsPage,
 } from "./pages";
 
 //--------------------------------------------------
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/ourDonuts",
         element: <OurDonutsPage />,
+      },
+      {
+        path: "/ourLocations",
+        element: <OurLocationsPage />,
       },
       // {
       //   path: "/category/:name",

@@ -18,8 +18,8 @@ export default function useGradientCharsReveal(target, ref) {
         scrollTrigger: {
           toggleActions: "play play reset reset",
           trigger: target,
-          start: "top 55%",
-          end: "bottom bottom",
+          start: "clamp(top center)",
+          end: "clamp(bottom bottom)",
           scrub: 2,
         },
       });

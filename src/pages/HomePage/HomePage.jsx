@@ -102,7 +102,7 @@ export default function HomePage() {
           .map((donutMonthlySpecial) => (
             <div
               key={donutMonthlySpecial.id}
-              className="flex flex-col gap-8 shadow-lg p-4 rounded-md h-[33rem]"
+              className="flex flex-col justify-around shadow-lg p-4 rounded-md h-[33rem]"
             >
               <div className="w-full  h-96 rounded-2xl  overflow-hidden relative isolate">
                 <img
@@ -124,10 +124,12 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex justify-between items-center font-extrabold ">
-                <div className="text-xl md:text-2xl lg:text-3xl uppercase">
+                <div className="text-xl  lg:text-2xl uppercase">
                   {donutMonthlySpecial.name}
                 </div>
-                <div className="text-xl">{donutMonthlySpecial.cost} $</div>
+                <div className="text-xl text-nowrap">
+                  {donutMonthlySpecial.cost} $
+                </div>
               </div>
             </div>
           ))}
@@ -221,7 +223,7 @@ export default function HomePage() {
           </Button>
         </div>
 
-        <div className="pt-[calc(var(--md-nav-hight)+1rem)]  h-screen  flex flex-col justify-around">
+        <div className="pt-[calc(var(--md-nav-hight)+1rem)]  min-h-screen  flex flex-col justify-center gap-12">
           <p className="text-center xl:text-7xl md:text-5xl text-3xl  font-extrabold uppercase">
             monthly specials
           </p>

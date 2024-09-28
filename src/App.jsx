@@ -10,6 +10,7 @@ import {
   HowItWorksPage,
   OurDonutsPage,
   OurLocationsPage,
+  CreateOwnBox,
 } from "./pages";
 
 //--------------------------------------------------
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/ourLocations",
         element: <OurLocationsPage />,
+      },
+      {
+        path: "/create-own-box",
+        element: <CreateOwnBox />,
       },
       // {
       //   path: "/category/:name",

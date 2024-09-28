@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "WhiteChocolateRaspberry",
+      "name": "White Chocolate Raspberry",
       "cost": 7.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-02.jpg",
@@ -101,7 +101,7 @@
       "name": "Chocolate Ganache",
       "cost": 7.5,
       "monthlySpecial": false,
-      "img": "./src/assets/imgs/Alldonuts/img-05.jpg",
+      "img": "./src/assets/imgs/Alldonuts/img-12.png",
       "des": "Doe's signature handcrafted holey donut coated in dark chocolate ganache"
     },
     {

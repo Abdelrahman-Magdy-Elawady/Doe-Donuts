@@ -56,7 +56,7 @@ export default function CartPage() {
     content = (
       <section className="py-[calc(var(--md-nav-hight)+2rem)] min-h-screen mx-8  flex flex-col gap-16 justify-center">
         <div className="flex justify-between items-center flex-col md:flex-row gap-4">
-          <Button className="sm:self-start flex justify-center items-center gap-2 rounded-xl px-4 text-md">
+          <Button className="self-start flex justify-center items-center gap-2 rounded-xl px-4 text-md">
             check out
             <IoBagCheckOutline className="text-2xl" />
           </Button>
@@ -64,7 +64,7 @@ export default function CartPage() {
             total cost : {totalCost} $
           </div>
           <Button
-            className="sm:self-end flex justify-center items-center gap-2 rounded-xl px-4 text-md"
+            className="self-end flex justify-center items-center gap-2 rounded-xl px-4 text-md"
             onClick={() => cleanCartHandler()}
           >
             clean cart <MdOutlineDeleteForever className="text-3xl" />

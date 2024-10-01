@@ -35,7 +35,7 @@ export default function Modal({ children, className, close }) {
   //------------------------------------------------
   return createPortal(
     <div
-      className="fixed inset-0 bg-gray-500 bg-opacity-50  z-50 flex justify-center items-center text-sm sm:text-base "
+      className="fixed inset-0 bg-gray-500 bg-opacity-50  z-[99] flex justify-center items-center text-sm sm:text-base "
       ref={ref}
     >
       <div

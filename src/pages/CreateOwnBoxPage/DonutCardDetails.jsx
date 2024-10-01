@@ -17,7 +17,7 @@ export default function DonutCardDetails({ donut, close, className }) {
     <Modal close={close} className={className}>
       <div
         className="p-8 h-full flex  flex-col lg:flex-row gap-8 justify-center 
-       md:text-xl font-extrabold text-center lg:text-start"
+       md:text-xl font-extrabold text-center lg:text-start "
       >
         <div className="relative h-96 lg:h-full w-full overflow-hidden rounded-md ">
           <div className="absolute inset-0">

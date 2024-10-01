@@ -1,19 +1,20 @@
 import DonutCardDetails from "./DonutCardDetails";
+import { cn } from "../../Utils/cn";
 import { useState } from "react";
+
 //------------------------------------------
 export default function DonutCard({ donut }) {
   const [showDetails, setShowDetails] = useState(false);
   return (
-    <div className="relative  isolate cursor-pointer">
+    <>
       <div
         key={donut.id}
-        className="flex flex-col justify-around shadow-lg p-4 rounded-md h-[33rem] md:w-96 w-80 "
-        style={{
-          backdropFilter: "blur(70px)",
-        }}
+        className={cn(
+          "support-hover:hover:cursor-pointer flex flex-col justify-around  p-4 rounded-md h-[33rem] md:w-96 w-80 border-2 [box-shadow:0_0_5px_1px_var(--body-text)]"
+        )}
         onClick={() => setShowDetails(true)}
       >
-        <div className="w-full  h-96 rounded-2xl  overflow-hidden relative isolate">
+        <div className="w-full  h-96 rounded-2xl  overflow-hidden ">
           <img
             src={donut.img}
             alt={donut.name}
@@ -28,18 +29,9 @@ export default function DonutCard({ donut }) {
           <div className="text-xl text-nowrap">{donut.cost} $</div>
         </div>
       </div>
-
-      <div className="absolute -inset-[.125rem]  -z-10 rounded-md flex justify-center items-center overflow-hidden">
-        <div
-          className="w-20 h-[150%] animate-spin bg-[--md-pink]"
-          style={{
-            animationDuration: "10s",
-          }}
-        ></div>
-      </div>
       {showDetails && (
         <DonutCardDetails close={() => setShowDetails(false)} donut={donut} />
       )}
-    </div>
+    </>
   );
 }

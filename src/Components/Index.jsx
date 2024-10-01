@@ -12,3 +12,4 @@ export { default as CurveBottom } from "./CurveBottom";
 export { default as PalmTree } from "./PalmTree";
 export { default as TimeLine } from "./TimeLine";
 export { default as Modal } from "./Modal";
+export { default as ScrollToTopButton } from "./ScrollToTopButton";

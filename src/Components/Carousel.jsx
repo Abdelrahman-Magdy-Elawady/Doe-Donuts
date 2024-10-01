@@ -33,7 +33,7 @@ const Carousel = ({ children, className, config, styles, buttons = true }) => {
         <div className="flex items-center justify-center gap-16 mt-8">
           <CiCircleChevLeft
             onClick={() => ref?.current?.slidePrev()}
-            className="text-5xl support-hover:hover:cursor-pointer support-hover:hover:text-black transition-colors duration-300"
+            className="text-[--body-text] text-5xl support-hover:hover:cursor-pointer support-hover:hover:text-black transition-colors duration-300 rounded-full"
           />
           <CiCircleChevRight
             onClick={() => ref?.current?.slideNext()}

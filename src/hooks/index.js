@@ -5,3 +5,4 @@ export { default as useCssVarSetter } from "./useCssVarSetter.js";
 export { default as useMediaQuery } from "./useMediaQuery.js";
 export { default as useGradientCharsReveal } from "./useGradientCharsReveal.js";
 export { default as usePreventBodyScroll } from "./usePreventBodyScroll.js";
+export { default as useScrollTo } from "./useScrollTo.js";

@@ -7,17 +7,18 @@ export default function Filter({ setFilterTerms }) {
 
   //--------------------------------------------------------
   const submitHandler = async (data) => {
-    let tempData = data;
+    let tempData = { ...data };
     for (let [key, value] of Object.entries(tempData)) {
       if (value === "true") {
         tempData[key] = true;
       } else if (value === "false") {
         tempData[key] = false;
       }
-      if (!value) {
+      if (!value || !value?.length) {
         delete tempData[key];
       }
     }
+    console.log(data, tempData);
     setFilterTerms(tempData);
   };
 

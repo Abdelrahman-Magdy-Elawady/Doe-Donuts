@@ -215,7 +215,7 @@ export default function HomePage() {
             <img src={girl} alt="" />
           </div>
           <div className="sec2-txt">{content.section2}</div>
-          <Button>
+          <Button className="[--body-bg:--md-white] [--body-text:--lg-pink]">
             <div className="flex justify-center items-center gap-4">
               about us
               <FaArrowRight />

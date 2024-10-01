@@ -56,3 +56,6 @@ export { default as ourDonuts_hand } from "./imgs/ourDonuts/hand.svg";
 
 export { default as ourLocations_hero } from "./imgs/ourLocations/hero.webp";
 export { default as ourLocations_WTN } from "./imgs/ourLocations/where2next.webp";
+
+//----------------------------cart--------------------------------------
+export { default as empty_cart_icon } from "./imgs/Cart/cart.png";

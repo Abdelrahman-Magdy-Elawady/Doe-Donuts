@@ -14,8 +14,8 @@ export default function DropDown({ title, children, styles, ...rest }) {
       //----------------
       if (showDetails) {
         gsap.from(".menu", {
-          yPercent: -100,
-          opacity: 0,
+          height: 0,
+          autoAlpha: 0,
           duration: 0.75,
           ease: "power3.inOut",
         });
@@ -31,11 +31,16 @@ export default function DropDown({ title, children, styles, ...rest }) {
         "relative support-hover:hover:cursor-pointer",
         rest?.className
       )}
-      onClick={() => setShowDetails(!showDetails)}
       ref={ref}
     >
-      <div className="flex flex-row items-center justify-center gap-2">
-        <div className={`${styles?.title}`}>{title}</div>
+      <div
+        className={cn(
+          "flex flex-row items-center justify-center gap-2",
+          styles?.title
+        )}
+        onClick={() => setShowDetails(!showDetails)}
+      >
+        <div>{title}</div>
         <IoIosArrowDown
           className={cn("text-xl transition-transform duration-300", {
             "rotate-180": showDetails,

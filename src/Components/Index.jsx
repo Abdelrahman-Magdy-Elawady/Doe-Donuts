@@ -11,5 +11,4 @@ export { default as TextArea } from "./TextArea";
 export { default as CurveBottom } from "./CurveBottom";
 export { default as PalmTree } from "./PalmTree";
 export { default as TimeLine } from "./TimeLine";
-export { default as DonutCard } from "./DonutCard";
-export { default as DonutDetails } from "./DonutDetails";
+export { default as Modal } from "./Modal";

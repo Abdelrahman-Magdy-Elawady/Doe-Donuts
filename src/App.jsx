@@ -10,7 +10,8 @@ import {
   HowItWorksPage,
   OurDonutsPage,
   OurLocationsPage,
-  CreateOwnBox,
+  CreateOwnBoxPage,
+  CartPage,
 } from "./pages";
 
 //--------------------------------------------------
@@ -50,12 +51,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/create-own-box",
-        element: <CreateOwnBox />,
+        element: <CreateOwnBoxPage />,
       },
-      // {
-      //   path: "/category/:name",
-      //   element: <CategoryPage />,
-      // },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
     ],
   },
 ]);

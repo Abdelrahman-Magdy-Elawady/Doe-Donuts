@@ -1,9 +1,10 @@
-import { DonutDetails } from ".";
+import DonutCardDetails from "./DonutCardDetails";
 import { useState } from "react";
+//------------------------------------------
 export default function DonutCard({ donut }) {
   const [showDetails, setShowDetails] = useState(false);
   return (
-    <div className="relative  isolate">
+    <div className="relative  isolate cursor-pointer">
       <div
         key={donut.id}
         className="flex flex-col justify-around shadow-lg p-4 rounded-md h-[33rem] md:w-96 w-80 "
@@ -30,14 +31,14 @@ export default function DonutCard({ donut }) {
 
       <div className="absolute -inset-[.125rem]  -z-10 rounded-md flex justify-center items-center overflow-hidden">
         <div
-          className="w-20 h-[150%] bg-[--md-pink] animate-spin"
+          className="w-20 h-[150%] animate-spin bg-[--md-pink]"
           style={{
             animationDuration: "10s",
           }}
         ></div>
       </div>
       {showDetails && (
-        <DonutDetails close={() => setShowDetails(false)}></DonutDetails>
+        <DonutCardDetails close={() => setShowDetails(false)} donut={donut} />
       )}
     </div>
   );

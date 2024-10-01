@@ -8,6 +8,9 @@ const Button = ({ className, children, ...rest }) => {
         className
       )}
       {...rest}
+      style={{
+        backdropFilter: "blur(70px)",
+      }}
     >
       {children}
     </button>

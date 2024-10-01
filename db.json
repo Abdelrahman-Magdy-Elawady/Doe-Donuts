@@ -6,7 +6,8 @@
       "cost": 6.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-15.png",
-      "des": "Doe's own hand crafted holey donut topped with a vanilla bean glaze"
+      "des": "Doe's own hand crafted holey donut topped with a vanilla bean glaze",
+      "category": "donuts"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "cost": 7.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-02.jpg",
-      "des": "Doe's own handcrafted holey donut glazed with white chocolate ganache and topped with crushed freeze dried raspberries"
+      "des": "Doe's own handcrafted holey donut glazed with white chocolate ganache and topped with crushed freeze dried raspberries",
+      "category": "donuts"
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "cost": 1,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-13.png",
-      "des": "Ye old faithful - Doe's own handcrafted holey donut dunked in a delicious mix of cinnamon and sugar"
+      "des": "Ye old faithful - Doe's own handcrafted holey donut dunked in a delicious mix of cinnamon and sugar",
+      "category": "donuts"
     },
     {
       "id": 4,
@@ -30,7 +33,8 @@
       "cost": 9.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-14.png",
-      "des": "Doe's own handcrafted solid donut filled with mascarpone vanilla cream and berry jam, rolled in cinnamon sugar, and sprinkled with freeze-dried raspberries"
+      "des": "Doe's own handcrafted solid donut filled with mascarpone vanilla cream and berry jam, rolled in cinnamon sugar, and sprinkled with freeze-dried raspberries",
+      "category": "donuts"
     },
     {
       "id": 5,
@@ -38,7 +42,8 @@
       "cost": 9.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-09.jpg",
-      "des": "Doe's own handcrafted solid donut filled with mascarpone coffee cream, topped with a lady finger and toasted almonds, and dusted with cocoa powder"
+      "des": "Doe's own handcrafted solid donut filled with mascarpone coffee cream, topped with a lady finger and toasted almonds, and dusted with cocoa powder",
+      "category": "donuts"
     },
     {
       "id": 6,
@@ -46,7 +51,8 @@
       "cost": 9.5,
       "monthlySpecial": true,
       "img": "./src/assets/imgs/Alldonuts/img-17.jpg",
-      "des": "Doe's own handcrafted solid donut filled with a salted caramel white chocolate ganache, rolled in cinnamon sugar."
+      "des": "Doe's own handcrafted solid donut filled with a salted caramel white chocolate ganache, rolled in cinnamon sugar.",
+      "category": "donuts"
     },
     {
       "id": 7,
@@ -54,7 +60,8 @@
       "cost": 9.5,
       "monthlySpecial": true,
       "img": "./src/assets/imgs/Alldonuts/img-19.jpg",
-      "des": "Doe's own handcrafted solid donut filled with passionfruit mascarpone cream dipped in a mango glaze and topped with passionfruit coulis and coconut."
+      "des": "Doe's own handcrafted solid donut filled with passionfruit mascarpone cream dipped in a mango glaze and topped with passionfruit coulis and coconut.",
+      "category": "donuts"
     },
     {
       "id": 8,
@@ -62,7 +69,8 @@
       "cost": 9.5,
       "monthlySpecial": true,
       "img": "./src/assets/imgs/Alldonuts/img-20.jpg",
-      "des": "Doe's own handcrafted solid donut filled with peppermint mascarpone cream with chocolate chunks and dipped in chocolate ganache."
+      "des": "Doe's own handcrafted solid donut filled with peppermint mascarpone cream with chocolate chunks and dipped in chocolate ganache.",
+      "category": "donuts"
     },
     {
       "id": 9,
@@ -70,7 +78,8 @@
       "cost": 6.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-03.jpg",
-      "des": "The kiwi classic - a delicious dark chocolate and cornflake biscuit topped with buttery chocolate icing and candied walnuts"
+      "des": "The kiwi classic - a delicious dark chocolate and cornflake biscuit topped with buttery chocolate icing and candied walnuts",
+      "category": "cookies"
     },
     {
       "id": 10,
@@ -78,7 +87,8 @@
       "cost": 6.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-21.jpg",
-      "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is made with a rich dark brown butter and packed with Whittikars dark chocolate and sprinkled with sea salt."
+      "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is made with a rich dark brown butter and packed with Whittikars dark chocolate and sprinkled with sea salt.",
+      "category": "cookies"
     },
     {
       "id": 11,
@@ -86,7 +96,8 @@
       "cost": 6.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-22.jpg",
-      "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is jam packed with Whittakers creamy milk chocolate and 52% dark block chocolate."
+      "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is jam packed with Whittakers creamy milk chocolate and 52% dark block chocolate.",
+      "category": "cookies"
     },
     {
       "id": 12,
@@ -94,7 +105,8 @@
       "cost": 6.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-04.jpg",
-      "des": "When an afghan meets a melting moment it created a Pashghan.Shortbread biscuit with cornflakes and passionfruit icing."
+      "des": "When an afghan meets a melting moment it created a Pashghan.Shortbread biscuit with cornflakes and passionfruit icing.",
+      "category": "cookies"
     },
     {
       "id": 13,
@@ -102,7 +114,8 @@
       "cost": 7.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-12.png",
-      "des": "Doe's signature handcrafted holey donut coated in dark chocolate ganache"
+      "des": "Doe's signature handcrafted holey donut coated in dark chocolate ganache",
+      "category": "donuts"
     },
     {
       "id": 14,
@@ -110,7 +123,8 @@
       "cost": 6.5,
       "monthlySpecial": false,
       "img": "./src/assets/imgs/Alldonuts/img-23.jpg",
-      "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is jam packed with white chocolate chips and pieces of macadamia, and sprinkled with sea salt."
+      "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is jam packed with white chocolate chips and pieces of macadamia, and sprinkled with sea salt.",
+      "category": "cookies"
     }
   ]
 }

@@ -35,13 +35,13 @@ const Details = ({ title, children, styles, ...rest }) => {
         "relative support-hover:hover:cursor-pointer",
         rest?.className
       )}
-      onClick={() => setShowDetails(!showDetails)}
       ref={ref}
     >
       <div
         className={cn(styles?.title, {
           "border-b-2": showDetails,
         })}
+        onClick={() => setShowDetails(!showDetails)}
       >
         <div>{title}</div>
         <IoIosArrowDown

@@ -1,15 +1,10 @@
 import { locations } from "./constants";
 import { ourLocations_hero, ourLocations_WTN } from "../../assets/constants";
 import { useRef } from "react";
-import {
-  useCssVarSetter,
-  useChangeColor,
-  useGradientCharsReveal,
-} from "../../hooks";
+import { useCssVarSetter, useChangeColor } from "../../hooks";
 
 import { Button, CurveBottom } from "../../Components";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { div } from "framer-motion/client";
 
 const colorPalette = [
   {
@@ -42,7 +37,6 @@ export default function OurLocationsPage() {
     "--body-text": "white",
   });
   useChangeColor(ref, colorPalette);
-  useGradientCharsReveal(".sec2-txt", ref);
 
   return (
     <main

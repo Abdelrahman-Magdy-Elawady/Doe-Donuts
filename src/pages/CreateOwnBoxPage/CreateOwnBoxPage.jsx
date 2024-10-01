@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useCssVarSetter, useChangeColor } from "../../hooks";
-import { CurveBottom, DonutCard } from "../../Components";
+import { CurveBottom } from "../../Components";
+import DonutCard from "./DonutCard";
 import { useFetchDonutsQuery } from "../../store";
+import Filter from "./Filter";
 
 const colorPalette = [
   {
@@ -11,24 +13,11 @@ const colorPalette = [
       "--body-text": "var(--lg-pink)",
     },
   },
-  //   {
-  //     target: ".sec-2",
-  //     style: {
-  //       "--body-bg": "var(--blue)",
-  //       "--body-text": "white",
-  //     },
-  //   },
-  //   {
-  //     target: ".sec-3",
-  //     style: {
-  //       "--body-bg": "var(--brillian-Rose)",
-  //       "--body-text": "white",
-  //     },
-  //   },
 ];
 //-------------------------------------------------
 
 export default function CreateOwnBox() {
+  const [filterTerms, setFilterTerms] = useState({});
   const ref = useRef(null);
   useCssVarSetter({
     "--body-bg": "var(--md-white)",
@@ -50,7 +39,34 @@ export default function CreateOwnBox() {
       </div>
     );
   } else {
-    allDonuts = data.map((donut) => <DonutCard donut={donut} key={donut.id} />);
+    if (!Object.keys(filterTerms).length) {
+      allDonuts = data.map((donut) => (
+        <DonutCard donut={donut} key={donut.id} />
+      ));
+    } else {
+      if (!Object.keys(filterTerms).length) {
+        allDonuts = data.map((donut) => (
+          <DonutCard donut={donut} key={donut.id} />
+        ));
+      } else {
+        allDonuts = data
+          .filter((donut) => {
+            for (let [term, value] of Object.entries(filterTerms)) {
+              if (Array.isArray(value)) {
+                if (value.includes(donut[term])) {
+                  return true;
+                }
+              } else {
+                if (donut[term] === value) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          })
+          .map((donut) => <DonutCard donut={donut} key={donut.id} />);
+      }
+    }
   }
 
   return (
@@ -74,7 +90,9 @@ export default function CreateOwnBox() {
                   pick up or delivery!
                 </div>
               </div>
-              <div>filter</div>
+              <div>
+                <Filter setFilterTerms={setFilterTerms} />
+              </div>
             </div>
           </div>
         )}

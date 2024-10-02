@@ -18,7 +18,6 @@ export default function Filter({ setFilterTerms }) {
         delete tempData[key];
       }
     }
-    console.log(data, tempData);
     setFilterTerms(tempData);
   };
 

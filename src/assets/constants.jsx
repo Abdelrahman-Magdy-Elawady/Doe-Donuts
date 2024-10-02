@@ -57,5 +57,16 @@ export { default as ourDonuts_hand } from "./imgs/ourDonuts/hand.svg";
 export { default as ourLocations_hero } from "./imgs/ourLocations/hero.webp";
 export { default as ourLocations_WTN } from "./imgs/ourLocations/where2next.webp";
 
-//----------------------------cart--------------------------------------
+//---------------------------- cart ------------------------------
 export { default as empty_cart_icon } from "./imgs/Cart/cart.png";
+
+//-------------------------- create own box , combo -------------
+
+export { default as donutBox1 } from "./imgs/createOwnBox/62.png";
+export { default as donutBox2 } from "./imgs/createOwnBox/5.png";
+export { default as donutBox3 } from "./imgs/createOwnBox/4.png";
+export { default as donutBox4 } from "./imgs/createOwnBox/7.png";
+export { default as cookiesAll } from "./imgs/createOwnBox/123.jpg";
+export { default as cookies1 } from "./imgs/createOwnBox/1.jpg";
+export { default as cookies2 } from "./imgs/createOwnBox/2.jpg";
+export { default as cookies3 } from "./imgs/createOwnBox/3.jpg";

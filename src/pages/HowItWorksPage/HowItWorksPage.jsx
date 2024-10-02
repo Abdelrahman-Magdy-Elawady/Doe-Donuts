@@ -1,10 +1,6 @@
 import { timeLineContent } from "./constants";
 import { useRef } from "react";
-import {
-  useCssVarSetter,
-  useChangeColor,
-  useGradientCharsReveal,
-} from "../../hooks";
+import { useCssVarSetter, useChangeColor } from "../../hooks";
 
 import { Button, CurveBottom, TimeLine } from "../../Components";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -45,7 +41,6 @@ export default function HowItWorksPage() {
     "--body-text": "white",
   });
   useChangeColor(ref, colorPalette);
-  useGradientCharsReveal(".sec2-txt", ref);
 
   return (
     <main

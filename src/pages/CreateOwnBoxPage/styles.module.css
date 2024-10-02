@@ -1,0 +1,54 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+[data-grid="child-0"] {
+  grid-area: 1 / 1 / 4 / 4;
+}
+[data-grid="child-1"] {
+  grid-area: 4 / 1 / 5 / 2;
+}
+[data-grid="child-2"] {
+  grid-area: 4 / 2 / 5 / 3;
+}
+[data-grid="child-3"] {
+  grid-area: 4 / 3 / 5/ 4;
+}
+
+@media only screen and (max-width: 640px) {
+  .parent {
+    gap: 0.5rem;
+  }
+}
+
+.card {
+  isolation: isolate;
+  position: relative;
+}
+
+.card:hover,
+.card:not(:hover) {
+  background-attachment: fixed;
+  background-image: radial-gradient(
+    circle at var(--x, 0) var(--y, 0),
+    var(--md-pink),
+    var(--body-bg) 12rem
+  );
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-attachment: fixed;
+  background-image: radial-gradient(
+    circle at var(--x, 0) var(--y, 0),
+    var(--body-bg),
+    transparent 6rem
+  );
+  pointer-events: none;
+  z-index: -1;
+}

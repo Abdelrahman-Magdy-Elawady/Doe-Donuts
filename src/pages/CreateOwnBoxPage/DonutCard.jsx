@@ -1,6 +1,7 @@
 import DonutCardDetails from "./DonutCardDetails";
 import { cn } from "../../Utils/cn";
 import { useState } from "react";
+import styles from "./styles.module.css";
 
 //------------------------------------------
 export default function DonutCard({ donut }) {
@@ -10,7 +11,8 @@ export default function DonutCard({ donut }) {
       <div
         key={donut.id}
         className={cn(
-          "support-hover:hover:cursor-pointer flex flex-col justify-around  p-4 rounded-md h-[33rem] md:w-96 w-80 border-2 [box-shadow:0_0_5px_1px_var(--body-text)]"
+          "support-hover:hover:cursor-pointer flex flex-col justify-around  p-4 rounded-md h-[33rem] md:w-96 w-80 border-2",
+          styles.card
         )}
         onClick={() => setShowDetails(true)}
       >
@@ -22,7 +24,7 @@ export default function DonutCard({ donut }) {
           />
         </div>
 
-        <div className="flex justify-between items-center font-extrabold ">
+        <div className="support-hover:hover:mix-blend-exclusion flex justify-between items-center font-extrabold ">
           <div className="text-xl  lg:text-2xl uppercase line-clamp-1">
             {donut.name}
           </div>

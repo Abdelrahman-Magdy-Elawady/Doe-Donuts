@@ -39,7 +39,7 @@ export default function CartPage() {
   let content = null;
   if (!cart.length) {
     content = (
-      <section className="px-8 flex flex-col items-center justify-center text-center gap-8 pt-[calc(var(--md-nav-hight)+1rem)] h-screen">
+      <section className="sec-1 px-8 flex flex-col items-center justify-center text-center gap-8 pt-[calc(var(--md-nav-hight)+1rem)] h-screen">
         <div className="max-w-1/4">
           <img
             src={empty_cart_icon}
@@ -54,7 +54,7 @@ export default function CartPage() {
     );
   } else {
     content = (
-      <section className="py-[calc(var(--md-nav-hight)+2rem)] min-h-screen mx-8  flex flex-col gap-16 justify-center">
+      <section className="sec-1 py-[calc(var(--md-nav-hight)+2rem)] min-h-screen mx-8  flex flex-col gap-16 justify-center">
         <div className="flex justify-between items-center flex-col md:flex-row gap-4">
           <Button className="self-start flex justify-center items-center gap-2 rounded-xl px-4 text-md">
             check out
@@ -91,7 +91,6 @@ export default function CartPage() {
       ref={ref}
     >
       {content}
-
       <CurveBottom />
     </main>
   );

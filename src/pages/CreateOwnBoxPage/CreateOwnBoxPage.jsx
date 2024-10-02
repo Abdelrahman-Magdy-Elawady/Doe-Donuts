@@ -1,9 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useCssVarSetter, useChangeColor } from "../../hooks";
 import { CurveBottom } from "../../Components";
 import DonutCard from "./DonutCard";
 import { useFetchDonutsQuery } from "../../store";
 import Filter from "./Filter";
+import SpecialBoxs from "./SpecialBoxs";
+import { cookies_6_pack, minisAssortedBox } from "./constants";
 
 const colorPalette = [
   {
@@ -24,9 +26,23 @@ export default function CreateOwnBox() {
     "--body-text": "var(--lg-pink)",
   });
   useChangeColor(ref, colorPalette);
+  //-------------------------------------------------------------
+  useEffect(() => {
+    const container = document.querySelector(".card-container");
+    document.addEventListener("mousemove", (e) => {
+      container.style.setProperty("--x", e.x + "px");
+      container.style.setProperty("--y", e.y + "px");
+    });
 
+    return () => {
+      document.removeEventListener("mousemove", (e) => {
+        container.style.setProperty("--x", e.x + "px");
+        container.style.setProperty("--y", e.y + "px");
+      });
+    };
+  }, []);
+  //--------------------------------------------------------------
   const { data, error, isFetching } = useFetchDonutsQuery();
-
   let allDonuts = null;
   if (isFetching) {
     allDonuts = (
@@ -68,10 +84,10 @@ export default function CreateOwnBox() {
       }
     }
   }
-
+  //------------------------------------------------------------------
   return (
     <main
-      className="relative bg-[--body-bg] text-[--body-text] transition-colors duration-500"
+      className=" relative bg-[--body-bg] text-[--body-text] transition-colors duration-500"
       ref={ref}
     >
       <section className="sec-1 pt-[calc(var(--md-nav-hight)+1rem)]  mx-4 lg:mx-16 min-h-screen flex flex-col justify-center items-center gap-16">
@@ -96,10 +112,18 @@ export default function CreateOwnBox() {
             </div>
           </div>
         )}
-        <div className=" flex flex-wrap justify-center items-center gap-16">
+        <div className=" flex flex-wrap justify-center items-center gap-16 card-container">
           {allDonuts}
         </div>
       </section>
+      <section className="sec-2 my-24 mx-4 lg:mx-16 ">
+        <h2 className="font-extrabold text-2xl md:text-4xl uppercase mb-16">
+          select from the special boxs
+        </h2>
+        <SpecialBoxs product={cookies_6_pack} />
+        <SpecialBoxs product={minisAssortedBox} />
+      </section>
+
       <div className="h-40 ">{/* divider */}</div>
       <CurveBottom />
     </main>

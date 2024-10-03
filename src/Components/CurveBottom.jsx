@@ -6,7 +6,7 @@ export default function CurveBottom({ className }) {
       height="226"
       viewBox="0 0 1728 226"
       className={cn(
-        "fill-[--body-bg] w-full h-auto absolute top-full z-50 -mt-1",
+        "fill-[--body-bg] w-full h-auto absolute top-full z-10 -mt-1",
         className
       )}
       style={{ filter: "drop-shadow(0px 8px 4px rgba(174, 29, 116, 0.1))" }}

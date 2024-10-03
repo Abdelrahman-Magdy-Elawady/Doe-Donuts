@@ -18,7 +18,7 @@ const colorPalette = [
 ];
 //-------------------------------------------------
 
-export default function CreateOwnBox() {
+export default function OrderNowPage() {
   const [filterTerms, setFilterTerms] = useState({});
   const ref = useRef(null);
   useCssVarSetter({
@@ -112,7 +112,7 @@ export default function CreateOwnBox() {
             </div>
           </div>
         )}
-        <div className=" flex flex-wrap justify-center items-center gap-16 card-container">
+        <div className=" flex flex-wrap justify-center items-center gap-8 card-container">
           {allDonuts}
         </div>
       </section>

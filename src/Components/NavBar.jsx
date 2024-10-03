@@ -33,8 +33,8 @@ export default function NavBar() {
       label: "contact",
     },
     {
-      path: "",
-      label: "loyality program",
+      path: "/orderNow",
+      label: "order now",
     },
   ].map((tab, i) => (
     <Link key={i} to={tab.path}>

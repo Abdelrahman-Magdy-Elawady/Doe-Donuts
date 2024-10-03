@@ -10,8 +10,11 @@ import {
   HowItWorksPage,
   OurDonutsPage,
   OurLocationsPage,
-  CreateOwnBoxPage,
+  OrderNowPage,
   CartPage,
+  ShippingPolicyPage,
+  TermsAndConditionsPage,
+  FaqsPage,
 } from "./pages";
 
 //--------------------------------------------------
@@ -50,12 +53,29 @@ const router = createBrowserRouter([
         element: <OurLocationsPage />,
       },
       {
-        path: "/create-own-box",
-        element: <CreateOwnBoxPage />,
+        path: "/orderNow",
+        element: <OrderNowPage />,
       },
       {
         path: "/cart",
         element: <CartPage />,
+      },
+      {
+        path: "/policies",
+        children: [
+          {
+            path: "/policies/shipping-policy",
+            element: <ShippingPolicyPage />,
+          },
+          {
+            path: "/policies/terms-and-conditions",
+            element: <TermsAndConditionsPage />,
+          },
+          {
+            path: "/policies/faqs",
+            element: <FaqsPage />,
+          },
+        ],
       },
     ],
   },

@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import { content } from "./constants";
+import { Link } from "react-router-dom";
 import {
   heroImg,
   heroSmImg,
@@ -215,12 +216,14 @@ export default function HomePage() {
             <img src={girl} alt="" />
           </div>
           <div className="sec2-txt">{content.section2}</div>
-          <Button className="[--body-bg:--md-white] [--body-text:--lg-pink]">
-            <div className="flex justify-center items-center gap-4">
-              about us
-              <FaArrowRight />
-            </div>
-          </Button>
+          <Link to="/aboutUs">
+            <Button className="[--body-bg:--md-white] [--body-text:--lg-pink]">
+              <div className="flex justify-center items-center gap-4">
+                about us
+                <FaArrowRight />
+              </div>
+            </Button>
+          </Link>
         </div>
 
         <div className="pt-[calc(var(--md-nav-hight)+1rem)]  min-h-screen  flex flex-col justify-center gap-12">
@@ -238,12 +241,14 @@ export default function HomePage() {
           </div>
           <div className="flex-1 lg:flex-initial lg:gap-16   flex flex-col items-center justify-evenly lg:justify-between text-3xl ">
             <div>{content.createYourOwnBox}</div>
-            <Button>
-              <div className="flex justify-center items-center gap-4">
-                shop all
-                <FaArrowRight />
-              </div>
-            </Button>
+            <Link to="/orderNow">
+              <Button>
+                <div className="flex justify-center items-center gap-4">
+                  shop all
+                  <FaArrowRight />
+                </div>
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -264,12 +269,14 @@ export default function HomePage() {
           <div className="p-4 text-2xl leading-tight tracking-tighter  capitalize">
             {content.section4.paragraph}
           </div>
-          <Button>
-            <div className="flex justify-center items-center gap-4">
-              find out more
-              <FaArrowRight />
-            </div>
-          </Button>
+          <Link to="/corporate">
+            <Button>
+              <div className="flex justify-center items-center gap-4">
+                find out more
+                <FaArrowRight />
+              </div>
+            </Button>
+          </Link>
           <div className="hidden md:block w-1/3 absolute left-0 bottom-0  -z-10">
             <img
               src={pinAppple}

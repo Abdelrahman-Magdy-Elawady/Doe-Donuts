@@ -20,6 +20,7 @@ import {
   otv,
   businessDesk,
 } from "../../assets/constants";
+import { Link } from "react-router-dom";
 
 const colorPalette = [
   {
@@ -167,11 +168,13 @@ export default function AboutUsPage() {
         </div>
 
         <div className="relative flex-1 ">
-          <Button className="mt-8 mx-auto block lg:mr-16 lg:mt-16">
-            <div className="flex justify-center items-center gap-2">
-              how it works <FaArrowRightLong />
-            </div>
-          </Button>
+          <Link to="/howItWorks">
+            <Button className="mt-8 mx-auto block lg:mr-16 lg:mt-16">
+              <div className="flex justify-center items-center gap-2">
+                how it works <FaArrowRightLong />
+              </div>
+            </Button>
+          </Link>
         </div>
 
         <div className="absolute inset-0 -z-10">

@@ -9,6 +9,7 @@ import {
   howIW_tLDonuts,
   howIW_WTNext,
 } from "../../assets/constants";
+import { Link } from "react-router-dom";
 
 const colorPalette = [
   {
@@ -86,12 +87,14 @@ export default function HowItWorksPage() {
           </h1>
         </div>
         <div className="flex-1">
-          <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16 ">
-            <div className="flex justify-center items-center gap-2">
-              <span className="hidden md:inline">corporate + custom </span>
-              orders <FaArrowRightLong />
-            </div>
-          </Button>
+          <Link to="/corporate">
+            <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16 ">
+              <div className="flex justify-center items-center gap-2">
+                <span className="hidden md:inline">corporate + custom </span>
+                orders <FaArrowRightLong />
+              </div>
+            </Button>
+          </Link>
         </div>
         <div className="absolute inset-0 -z-10">
           <img

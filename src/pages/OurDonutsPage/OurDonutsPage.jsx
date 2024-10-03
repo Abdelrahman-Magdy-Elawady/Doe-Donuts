@@ -16,6 +16,7 @@ import {
 
 import { Button, CurveBottom } from "../../Components";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const colorPalette = [
   {
@@ -179,12 +180,14 @@ export default function HowItWorksPage() {
           </h1>
         </div>
         <div className="flex-1">
-          <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16 ">
-            <div className="flex justify-center items-center gap-2">
-              our story
-              <FaArrowRightLong />
-            </div>
-          </Button>
+          <Link to="/aboutUs">
+            <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16 ">
+              <div className="flex justify-center items-center gap-2">
+                our story
+                <FaArrowRightLong />
+              </div>
+            </Button>
+          </Link>
         </div>
         <div className="absolute inset-0 -z-10">
           <img

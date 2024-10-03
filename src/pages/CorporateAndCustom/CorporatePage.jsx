@@ -9,13 +9,14 @@ import {
   corporate_product6,
   whereToNext,
 } from "../../assets/constants";
-import { useChangeColor, useCssVarSetter } from "../../hooks";
+import { useChangeColor, useCssVarSetter, useScrollTo } from "../../hooks";
 import { useRef } from "react";
 import { Carousel, Button, Stepper, CurveBottom } from "../../Components";
 import { Navigation } from "swiper/modules";
 import { FaArrowDown } from "react-icons/fa";
 import CorporateForm from "./CorporateForm";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 //------------------------------------------------
 const colorPalette = [
@@ -44,6 +45,8 @@ const colorPalette = [
 //-------------------------------------------------
 const CorporatePage = () => {
   const ref = useRef(null);
+  const scrollTo = useScrollTo(ref);
+
   useCssVarSetter({
     "--body-bg": "var(--yellow)",
     "--body-text": "white",
@@ -119,11 +122,21 @@ const CorporatePage = () => {
         <h1 className="text-6xl font-extrabold uppercase text-center ">
           how it works
         </h1>
-        <Button className="px-24">
-          <a className="flex justify-center items-center gap-4" href="#">
-            about us
+
+        <Button
+          className="md:px-24"
+          onClick={() =>
+            scrollTo(window, {
+              duration: 2,
+              scrollTo: { y: "#corporate-form", offsetY: -10 },
+              ease: "power2",
+            })
+          }
+        >
+          <div className="flex justify-center items-center gap-4">
+            get started
             <FaArrowDown />
-          </a>
+          </div>
         </Button>
 
         <Stepper
@@ -146,7 +159,10 @@ const CorporatePage = () => {
           ))}
         </Stepper>
       </section>
-      <section className="sec-4 pt-[calc(var(--md-nav-hight)+1rem)] ">
+      <section
+        id="corporate-form"
+        className="sec-4 pt-[calc(var(--md-nav-hight)+1rem)] "
+      >
         <h1 className="uppercase font-extrabold text-[3.5rem] leading-none   text-center  max-w-[1024px] mx-auto px-2">
           corporate and custom order form
         </h1>
@@ -160,11 +176,13 @@ const CorporatePage = () => {
           </h1>
         </div>
         <div className="relative flex-1">
-          <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16">
-            <div className="flex justify-center items-center gap-2">
-              our donuts <FaArrowRightLong />
-            </div>
-          </Button>
+          <Link to="/ourDonuts">
+            <Button className="mt-8 mx-auto block lg:ml-16 lg:mt-16">
+              <div className="flex justify-center items-center gap-2">
+                our donuts <FaArrowRightLong />
+              </div>
+            </Button>
+          </Link>
         </div>
         <div className="absolute inset-0 -z-10">
           <img

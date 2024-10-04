@@ -20,14 +20,17 @@ import {
 import {
   useChangeColor,
   useCssVarSetter,
-  useGradientCharsReveal,
+  useTextReveal,
+  useTextRevealScrollTrigger,
 } from "../../hooks";
 import { useFetchDonutsQuery } from "../../store";
+
 //---------------------------------------------------------------
 import { Button, Carousel, CurveBottom, PalmTree } from "../../Components";
 import { Navigation } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa6";
 import { useRef } from "react";
+
 //-----------------------------------------------------------------
 
 const colorPalette = [
@@ -68,8 +71,38 @@ export default function HomePage() {
     "--body-bg": "var(--md-pink)",
     "--body-text": "white",
   });
-  useGradientCharsReveal(".sec2-txt", homePage);
 
+  useTextReveal(".text1", homePage, "chars", {
+    yPercent: 100,
+    stagger: 0.07,
+    ease: "power1.inOut",
+    delay: 0.3,
+  });
+
+  useTextRevealScrollTrigger(".text2", homePage, "chars", {
+    stagger: 0.05,
+    ease: "power1.inOut",
+    yPercent: 100,
+    scrollTrigger: {
+      start: "clamp(top 75%)",
+      end: "clamp(bottom bottom)",
+      scrub: 2,
+    },
+  });
+  useTextRevealScrollTrigger(".sec2-txt", homePage, "chars", {
+    stagger: {
+      from: "edges",
+      each: 0.25,
+    },
+    ease: "power1.inOut",
+    autoAlpha: 0.3,
+    scrollTrigger: {
+      start: "clamp(top center)",
+      end: "clamp(bottom bottom)",
+      scrub: 2,
+    },
+  });
+  //---------------------------------------------------------
   const { data, error, isFetching } = useFetchDonutsQuery();
   let monthlySpecial = null;
   if (isFetching) {
@@ -145,7 +178,7 @@ export default function HomePage() {
       className="relative overflow-y-visible overflow-x-clip bg-[--body-bg] text-[--body-text] transition-colors duration-500"
       ref={homePage}
     >
-      <section className="sec-1  pt-[calc(var(--md-nav-hight)+1rem)] h-screen flex flex-col justify-end md:justify-between gap-4 items-center ">
+      <section className="sec-1  pt-[calc(var(--md-nav-hight)+2rem)] h-screen flex flex-col justify-end md:justify-between gap-4 items-center">
         <div>
           <div className="w-full h-32 md:h-44">
             <svg
@@ -171,8 +204,8 @@ export default function HomePage() {
           </div>
 
           <div className="uppercase font-extrabold text-2xl md:text-4xl -rotate-12 translate-x-1/2 -translate-y-1/4">
-            <div>donuts over</div>
-            <div> everything</div>
+            <div className="text1 overflow-hidden">donuts over</div>
+            <div className="text1 overflow-hidden"> everything</div>
           </div>
         </div>
 
@@ -227,7 +260,7 @@ export default function HomePage() {
         </div>
 
         <div className="pt-[calc(var(--md-nav-hight)+1rem)]  min-h-screen  flex flex-col justify-center gap-12">
-          <p className="text-center xl:text-7xl md:text-5xl text-3xl  font-extrabold uppercase">
+          <p className="text-center xl:text-7xl md:text-5xl text-3xl  font-extrabold uppercase text2 overflow-hidden">
             monthly specials
           </p>
           <div>{monthlySpecial}</div>
@@ -236,7 +269,7 @@ export default function HomePage() {
 
       <section className=" sec-3 transition-color duration-300 ">
         <div className="px-8 md:px-16 pt-[calc(var(--md-nav-hight)+1rem)]  h-screen  flex flex-col justify-evenly lg:flex-row items-center   lg:items-start text-center lg:text-left lg:gap-16 ">
-          <div className=" text-6xl lg:text-7xl   font-extrabold uppercase lg:sticky lg:top-[calc(var(--md-nav-hight)+1rem)] ">
+          <div className=" text-6xl lg:text-7xl   font-extrabold uppercase lg:sticky lg:top-[calc(var(--md-nav-hight)+1rem)]">
             create your own box
           </div>
           <div className="flex-1 lg:flex-initial lg:gap-16   flex flex-col items-center justify-evenly lg:justify-between text-3xl ">
@@ -263,7 +296,7 @@ export default function HomePage() {
         </div>
 
         <div className="pt-[calc(var(--md-nav-hight)+1rem)] h-screen text-center flex flex-col items-center justify-around relative">
-          <div className="max-w-[768px] leading-tight tracking-tighter text-6xl lg:text-7xl  font-extrabold uppercase px-4">
+          <div className="max-w-[768px] leading-tight tracking-tighter text-6xl lg:text-7xl  font-extrabold uppercase px-3 overflow-hidden text2">
             {content.section4.title}
           </div>
           <div className="p-4 text-2xl leading-tight tracking-tighter  capitalize">

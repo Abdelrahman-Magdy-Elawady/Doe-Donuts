@@ -1,6 +1,6 @@
 import { timeLineContent } from "./constants";
 import { useRef } from "react";
-import { useCssVarSetter, useChangeColor } from "../../hooks";
+import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
 
 import { Button, CurveBottom, TimeLine } from "../../Components";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -43,6 +43,13 @@ export default function HowItWorksPage() {
   });
   useChangeColor(ref, colorPalette);
 
+  useTextReveal(".hero", ref, "chars", {
+    yPercent: 100,
+    stagger: 0.07,
+    ease: "power1.inOut",
+    delay: 0.3,
+  });
+
   return (
     <main
       className="relative bg-[--body-bg] text-[--body-text] transition-colors duration-500"
@@ -51,10 +58,15 @@ export default function HowItWorksPage() {
       <section className="sec-1 h-screen pt-[calc(var(--md-nav-hight)+.25rem)]  grid grid-rows-2">
         <h1
           className="uppercase font-extrabold  p-2 text-7xl sm:text-8xl
-         md:text-9xl lg:text-[10rem] self-end  "
+         md:text-9xl lg:text-[10rem] self-end "
         >
-          <div className="text-start lg:text-center lg:mr-40">how it </div>
-          <div className="text-end lg:text-center lg:ml-40"> works</div>
+          <div className="text-start lg:text-center lg:mr-40 hero overflow-hidden">
+            how it
+          </div>
+          <div className="text-end lg:text-center lg:ml-40 hero overflow-hidden">
+            {" "}
+            works
+          </div>
         </h1>
 
         <div className="relative">

@@ -11,7 +11,8 @@ import { useRef } from "react";
 import {
   useCssVarSetter,
   useChangeColor,
-  useGradientCharsReveal,
+  useTextReveal,
+  useTextRevealScrollTrigger,
 } from "../../hooks";
 
 import { Button, CurveBottom } from "../../Components";
@@ -63,7 +64,26 @@ export default function HowItWorksPage() {
     "--body-text": "white",
   });
   useChangeColor(ref, colorPalette);
-  useGradientCharsReveal(".sec2-txt", ref);
+
+  useTextReveal(".hero", ref, "chars", {
+    yPercent: 100,
+    stagger: 0.07,
+    ease: "power1.inOut",
+    delay: 0.3,
+  });
+  useTextRevealScrollTrigger(".sec2-txt", ref, "chars", {
+    stagger: {
+      from: "edges",
+      each: 0.25,
+    },
+    ease: "power1.inOut",
+    autoAlpha: 0.3,
+    scrollTrigger: {
+      start: "clamp(top center)",
+      end: "clamp(bottom bottom)",
+      scrub: 2,
+    },
+  });
 
   return (
     <main
@@ -75,8 +95,8 @@ export default function HowItWorksPage() {
           className="uppercase font-extrabold  p-4 text-7xl sm:text-8xl
          md:text-9xl lg:text-[10rem] self-end md:self-start"
         >
-          <div>our </div>
-          <div>donuts</div>
+          <div className="hero overflow-hidden">our </div>
+          <div className="hero overflow-hidden">donuts</div>
         </h1>
 
         <div className="relative">

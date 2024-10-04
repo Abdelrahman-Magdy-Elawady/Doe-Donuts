@@ -6,7 +6,7 @@ import {
   creamyDonut,
 } from "../../assets/constants";
 import { useRef } from "react";
-import { useCssVarSetter, useChangeColor } from "../../hooks";
+import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
 import { Input, TextArea, Button, CurveBottom } from "../../Components";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
@@ -48,6 +48,12 @@ export default function ContactPage() {
     console.log(data);
     reset();
   };
+  useTextReveal(".hero", ref, "chars", {
+    yPercent: 200,
+    stagger: 0.07,
+    ease: "power1.inOut",
+    delay: 0.3,
+  });
 
   return (
     <main
@@ -55,7 +61,7 @@ export default function ContactPage() {
       ref={ref}
     >
       <section className="sec-1 pt-[calc(var(--md-nav-hight)+.25rem)] h-screen grid grid-rows-2 lg:[grid-template-rows:30%_70%]">
-        <h1 className="text-center uppercase font-extrabold  mx-auto py-8 text-6xl sm:text-8xl  xl:text-9xl self-center lg:self-start">
+        <h1 className="text-center uppercase font-extrabold  mx-auto py-8 text-6xl sm:text-8xl  xl:text-9xl self-center lg:self-start hero overflow-hidden">
           contact
         </h1>
         <div className="relative  ml-[15%] md:ml-[7%] ">

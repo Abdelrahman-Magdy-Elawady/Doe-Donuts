@@ -41,6 +41,7 @@ export default function OrderNowPage() {
       });
     };
   }, []);
+
   //--------------------------------------------------------------
   const { data, error, isFetching } = useFetchDonutsQuery();
   let allDonuts = null;
@@ -93,7 +94,7 @@ export default function OrderNowPage() {
       <section className="sec-1 pt-[calc(var(--md-nav-hight)+1rem)]  mx-4 lg:mx-16 min-h-screen flex flex-col justify-center items-center gap-16">
         {!isFetching && !error && (
           <div className="w-full space-y-24 pt-12">
-            <h1 className="text-center uppercase font-extrabold text-5xl md:text-8xl max-w-[1024px] mx-auto">
+            <h1 className="text-center uppercase font-extrabold text-5xl md:text-8xl max-w-[1024px] mx-auto ">
               Create your own box
             </h1>
             <div className="flex justify-between items-center text-center flex-col lg:flex-row lg:text-start gap-16">
@@ -117,7 +118,7 @@ export default function OrderNowPage() {
         </div>
       </section>
       <section className="sec-2 my-24 mx-4 lg:mx-16 ">
-        <h2 className="font-extrabold text-2xl md:text-4xl uppercase mb-16">
+        <h2 className="font-extrabold text-2xl md:text-4xl uppercase mb-16 ">
           select from the special boxs
         </h2>
         <SpecialBoxs product={cookies_6_pack} />

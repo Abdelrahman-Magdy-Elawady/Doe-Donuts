@@ -1,7 +1,7 @@
 import { locations } from "./constants";
 import { ourLocations_hero, ourLocations_WTN } from "../../assets/constants";
 import { useRef } from "react";
-import { useCssVarSetter, useChangeColor } from "../../hooks";
+import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
 
 import { Button, CurveBottom } from "../../Components";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -38,6 +38,12 @@ export default function OurLocationsPage() {
     "--body-text": "white",
   });
   useChangeColor(ref, colorPalette);
+  useTextReveal(".hero", ref, "chars", {
+    yPercent: 100,
+    stagger: 0.07,
+    ease: "power1.inOut",
+    delay: 0.3,
+  });
 
   return (
     <main
@@ -49,8 +55,8 @@ export default function OurLocationsPage() {
           className="uppercase font-extrabold  p-2 md:p-4 text-6xl sm:text-8xl
          md:text-9xl lg:text-[10rem] self-end md:self-start"
         >
-          <div>our </div>
-          <div>locations</div>
+          <div className="hero overflow-hidden">our </div>
+          <div className="hero overflow-hidden">locations</div>
         </h1>
 
         <div className="relative">

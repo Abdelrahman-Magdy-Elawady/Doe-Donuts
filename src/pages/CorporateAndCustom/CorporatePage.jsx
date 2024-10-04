@@ -9,7 +9,13 @@ import {
   corporate_product6,
   whereToNext,
 } from "../../assets/constants";
-import { useChangeColor, useCssVarSetter, useScrollTo } from "../../hooks";
+import {
+  useChangeColor,
+  useCssVarSetter,
+  useScrollTo,
+  useTextReveal,
+  useTextRevealScrollTrigger,
+} from "../../hooks";
 import { useRef } from "react";
 import { Carousel, Button, Stepper, CurveBottom } from "../../Components";
 import { Navigation } from "swiper/modules";
@@ -52,6 +58,25 @@ const CorporatePage = () => {
     "--body-text": "white",
   });
   useChangeColor(ref, colorPalette);
+  useTextReveal(".hero", ref, "chars", {
+    yPercent: 100,
+    stagger: 0.07,
+    ease: "power1.inOut",
+    delay: 0.3,
+  });
+  useTextRevealScrollTrigger(".corporate-txt", ref, "chars", {
+    stagger: {
+      from: "edges",
+      each: 0.25,
+    },
+    ease: "power1.inOut",
+    autoAlpha: 0.3,
+    scrollTrigger: {
+      start: "clamp(top center)",
+      end: "clamp(bottom bottom)",
+      scrub: 2,
+    },
+  });
 
   return (
     <main
@@ -64,7 +89,9 @@ const CorporatePage = () => {
       >
         <div className="text-center md:text-right uppercase font-extrabold  px-4 tracking-tighter py-8 text-5xl sm:text-7xl lg:text-8xl xl:text-9xl mb-[10vw]">
           {content.hero.title.map((paragraph, index) => (
-            <div key={index}>{paragraph}</div>
+            <div key={index} className="hero overflow-hidden">
+              {paragraph}
+            </div>
           ))}
         </div>
         <div className="absolute inset-0 top-[calc(var(--md-nav-hight)+.25rem)]">
@@ -163,7 +190,7 @@ const CorporatePage = () => {
         id="corporate-form"
         className="sec-4 pt-[calc(var(--md-nav-hight)+1rem)] "
       >
-        <h1 className="uppercase font-extrabold text-[3.5rem] leading-none   text-center  max-w-[1024px] mx-auto px-2">
+        <h1 className="uppercase font-extrabold text-[3.5rem] leading-none   text-center  max-w-[1024px] mx-auto px-2 corporate-txt">
           corporate and custom order form
         </h1>
         <CorporateForm />

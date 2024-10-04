@@ -111,6 +111,7 @@ export default function NavBar() {
           )}
         >
           <DropDown
+            key={key}
             title="about"
             className="hidden lg:block font-bold uppercase"
             styles={{

@@ -24,7 +24,7 @@ export default function DonutCard({ donut }) {
           />
         </div>
 
-        <div className="support-hover:hover:mix-blend-exclusion flex justify-between items-center font-extrabold ">
+        <div className="flex justify-between items-center font-extrabold ">
           <div className="text-xl  lg:text-2xl uppercase line-clamp-1">
             {donut.name}
           </div>

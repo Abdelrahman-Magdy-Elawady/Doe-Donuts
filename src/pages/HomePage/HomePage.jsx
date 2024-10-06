@@ -223,7 +223,7 @@ export default function HomePage() {
             <img
               src={heroSmImg}
               alt="donuts"
-              className="size-full  object-contain object-center"
+              className="size-full  object-contain object-bottom"
             />
           </picture>
         </div>
@@ -236,7 +236,7 @@ export default function HomePage() {
           backgroundColor: `var(--md-white)`,
         }}
       >
-        <Marquee autoFill={true}>
+        <Marquee autoFill={true} className="my-8">
           <div className="px-4 text-nowrap h-[--md-nav-hight]  flex gap-4  justify-center items-center bg-[#bad79d] min-w-[max-content] ">
             <div className="sm:w-12 w-8 shrink-0">
               <img
@@ -251,7 +251,7 @@ export default function HomePage() {
           </div>
         </Marquee>
 
-        <div className="flex flex-col justify-center items-center gap-16 p-8 lg:p-24 md:text-3xl text-2xl text-center">
+        <div className="flex flex-col justify-evenly items-center gap-16 p-8 lg:p-24 lg:text-3xl text-xl text-center max-w-[1280px] mx-auto h-screen pt-[calc(var(--md-nav-hight)+1rem)] ">
           <div>
             <img src={girl} alt="" />
           </div>

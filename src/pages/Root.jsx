@@ -3,7 +3,7 @@ import {
   Footer,
   ScrollToTopButton,
   PageTransition,
-} from "../Components";
+} from "../Components/Index";
 import { Outlet } from "react-router-dom";
 import { ScrollRestoration } from "react-router-dom";
 import { useGsapRefresh } from "../hooks";

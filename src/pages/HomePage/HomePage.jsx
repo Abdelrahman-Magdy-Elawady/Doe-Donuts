@@ -136,7 +136,7 @@ export default function HomePage() {
         buttons={true}
         styles={{
           slide:
-            " [--gap:20px] mx-[--gap] w-full md:w-[calc(50%-var(--gap))] xl:w-[calc(30%-var(--gap))] py-1",
+            " [--gap:30px] mx-[--gap] w-full md:w-[calc(50%-var(--gap))] xl:w-[calc(30%-var(--gap))] py-1 ",
         }}
       >
         {data
@@ -144,7 +144,7 @@ export default function HomePage() {
           .map((donutMonthlySpecial) => (
             <div
               key={donutMonthlySpecial.id}
-              className="flex flex-col justify-around shadow-lg p-4 rounded-md h-[33rem]"
+              className="flex flex-col justify-around p-4 rounded-md h-[33rem] border-2 "
             >
               <div className="w-full  h-96 rounded-2xl  overflow-hidden relative isolate">
                 <img

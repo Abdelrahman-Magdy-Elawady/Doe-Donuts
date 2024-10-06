@@ -9,7 +9,7 @@ export default function PageTransition() {
   const { key } = useLocation();
   const [isPlay, setIsPlay] = useState(false);
   const { isMd } = useMediaQuery();
-  const count = isMd ? 20 : 10;
+  const count = isMd ? 20 : 5;
   useGSAP(
     () => {
       const duration = parseFloat(

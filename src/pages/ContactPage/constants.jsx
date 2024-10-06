@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const contactInfo = [
   {
     title: "contact",
@@ -62,24 +63,24 @@ export const contactInfo = [
     content: [
       {
         link: (
-          <a
-            href="/ourLocations#grey-lynn"
+          <Link
+            to="/ourLocations#grey-lynn"
             title="grey-lynn"
             className="underline"
           >
             Greylynn
-          </a>
+          </Link>
         ),
       },
       {
         link: (
-          <a
-            href="/ourLocations#commercial-bay"
+          <Link
+            to="/ourLocations#commercial-bay"
             title="commercial-bay"
             className="underline"
           >
             Commercial Bay
-          </a>
+          </Link>
         ),
       },
     ],

@@ -5,7 +5,7 @@
       "name": "Vanilla Glaze",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-15.png",
+      "img": "/Alldonuts/img-15.png",
       "des": "Doe's own hand crafted holey donut topped with a vanilla bean glaze",
       "category": "donuts"
     },
@@ -14,7 +14,7 @@
       "name": "White Chocolate Raspberry",
       "cost": 7.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-02.jpg",
+      "img": "/Alldonuts/img-02.jpg",
       "des": "Doe's own handcrafted holey donut glazed with white chocolate ganache and topped with crushed freeze dried raspberries",
       "category": "donuts"
     },
@@ -23,7 +23,7 @@
       "name": "cinamon sugar",
       "cost": 1,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-13.png",
+      "img": "/Alldonuts/img-13.png",
       "des": "Ye old faithful - Doe's own handcrafted holey donut dunked in a delicious mix of cinnamon and sugar",
       "category": "donuts"
     },
@@ -32,7 +32,7 @@
       "name": " jam & cream",
       "cost": 9.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-14.png",
+      "img": "/Alldonuts/img-14.png",
       "des": "Doe's own handcrafted solid donut filled with mascarpone vanilla cream and berry jam, rolled in cinnamon sugar, and sprinkled with freeze-dried raspberries",
       "category": "donuts"
     },
@@ -41,7 +41,7 @@
       "name": " tiramisu",
       "cost": 9.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-09.jpg",
+      "img": "/Alldonuts/img-09.jpg",
       "des": "Doe's own handcrafted solid donut filled with mascarpone coffee cream, topped with a lady finger and toasted almonds, and dusted with cocoa powder",
       "category": "donuts"
     },
@@ -50,7 +50,7 @@
       "name": "Russian Fudge",
       "cost": 9.5,
       "monthlySpecial": true,
-      "img": "/src/assets/imgs/Alldonuts/img-17.jpg",
+      "img": "/Alldonuts/img-17.jpg",
       "des": "Doe's own handcrafted solid donut filled with a salted caramel white chocolate ganache, rolled in cinnamon sugar.",
       "category": "donuts"
     },
@@ -59,7 +59,7 @@
       "name": "tropical",
       "cost": 9.5,
       "monthlySpecial": true,
-      "img": "/src/assets/imgs/Alldonuts/img-19.jpg",
+      "img": "/Alldonuts/img-19.jpg",
       "des": "Doe's own handcrafted solid donut filled with passionfruit mascarpone cream dipped in a mango glaze and topped with passionfruit coulis and coconut.",
       "category": "donuts"
     },
@@ -68,7 +68,7 @@
       "name": "Peppermint Choc",
       "cost": 9.5,
       "monthlySpecial": true,
-      "img": "/src/assets/imgs/Alldonuts/img-20.jpg",
+      "img": "/Alldonuts/img-20.jpg",
       "des": "Doe's own handcrafted solid donut filled with peppermint mascarpone cream with chocolate chunks and dipped in chocolate ganache.",
       "category": "donuts"
     },
@@ -77,7 +77,7 @@
       "name": "Afghan",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-03.jpg",
+      "img": "/Alldonuts/img-03.jpg",
       "des": "The kiwi classic - a delicious dark chocolate and cornflake biscuit topped with buttery chocolate icing and candied walnuts",
       "category": "cookies"
     },
@@ -86,7 +86,7 @@
       "name": "Brown Butter Dark Chocolate",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-21.jpg",
+      "img": "/Alldonuts/img-21.jpg",
       "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is made with a rich dark brown butter and packed with Whittikars dark chocolate and sprinkled with sea salt.",
       "category": "cookies"
     },
@@ -95,7 +95,7 @@
       "name": "Choc Chip Cookie",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-22.jpg",
+      "img": "/Alldonuts/img-22.jpg",
       "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is jam packed with Whittakers creamy milk chocolate and 52% dark block chocolate.",
       "category": "cookies"
     },
@@ -104,7 +104,7 @@
       "name": "Pashghan",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-04.jpg",
+      "img": "/Alldonuts/img-04.jpg",
       "des": "When an afghan meets a melting moment it created a Pashghan.Shortbread biscuit with cornflakes and passionfruit icing.",
       "category": "cookies"
     },
@@ -113,7 +113,7 @@
       "name": "Chocolate Ganache",
       "cost": 7.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-12.png",
+      "img": "/Alldonuts/img-12.png",
       "des": "Doe's signature handcrafted holey donut coated in dark chocolate ganache",
       "category": "donuts"
     },
@@ -122,7 +122,7 @@
       "name": "White Choc Chip Macadamia Cookie",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/src/assets/imgs/Alldonuts/img-23.jpg",
+      "img": "/Alldonuts/img-23.jpg",
       "des": "Crispy on the outside with a satisfyingly thick and soft centre, this cookie is jam packed with white chocolate chips and pieces of macadamia, and sprinkled with sea salt.",
       "category": "cookies"
     }

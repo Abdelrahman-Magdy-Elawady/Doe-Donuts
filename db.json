@@ -5,7 +5,7 @@
       "name": "Vanilla Glaze",
       "cost": 6.5,
       "monthlySpecial": false,
-      "img": "/Alldonuts/img-15.png",
+      "img": "./Alldonuts/img-15.png",
       "des": "Doe's own hand crafted holey donut topped with a vanilla bean glaze",
       "category": "donuts"
     },
@@ -14,7 +14,7 @@
       "name": "White Chocolate Raspberry",
       "cost": 7.5,
       "monthlySpecial": false,
-      "img": "/Alldonuts/img-02.jpg",
+      "img": "./Alldonuts/img-02.jpg",
       "des": "Doe's own handcrafted holey donut glazed with white chocolate ganache and topped with crushed freeze dried raspberries",
       "category": "donuts"
     },

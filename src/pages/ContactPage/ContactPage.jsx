@@ -6,12 +6,7 @@ import {
   creamyDonut,
 } from "../../assets/constants";
 import { useRef } from "react";
-import {
-  useCssVarSetter,
-  useChangeColor,
-  useTextReveal,
-  useScrollTo,
-} from "../../hooks";
+import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
 import { Input, TextArea, Button, CurveBottom } from "../../Components/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
@@ -35,7 +30,7 @@ const colorPalette = [
 //-------------------------------------------------
 export default function ContactPage() {
   const ref = useRef(null);
-  const scrollTo = useScrollTo(ref);
+
   useCssVarSetter({
     "--body-bg": "var(--brillian-Rose)",
     "--body-text": "white",

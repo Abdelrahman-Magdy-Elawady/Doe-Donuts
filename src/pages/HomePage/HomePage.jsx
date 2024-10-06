@@ -72,11 +72,13 @@ export default function HomePage() {
     "--body-text": "white",
   });
 
-  useTextReveal(".text1", homePage, "chars", {
+  useTextReveal(".hero", homePage, "chars", {
     yPercent: 100,
     stagger: 0.07,
     ease: "power1.inOut",
-    delay: 0.3,
+    delay: getComputedStyle(document.documentElement).getPropertyValue(
+      "--animation-delay"
+    ),
   });
 
   useTextRevealScrollTrigger(".text2", homePage, "chars", {
@@ -204,8 +206,8 @@ export default function HomePage() {
           </div>
 
           <div className="uppercase font-extrabold text-2xl md:text-4xl -rotate-12 translate-x-1/2 -translate-y-1/4">
-            <div className="text1 overflow-hidden">donuts over</div>
-            <div className="text1 overflow-hidden"> everything</div>
+            <div className="hero overflow-hidden">donuts over</div>
+            <div className="hero overflow-hidden"> everything</div>
           </div>
         </div>
 

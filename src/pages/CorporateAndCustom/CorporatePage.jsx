@@ -62,7 +62,9 @@ const CorporatePage = () => {
     yPercent: 100,
     stagger: 0.07,
     ease: "power1.inOut",
-    delay: 0.3,
+    delay: getComputedStyle(document.documentElement).getPropertyValue(
+      "--animation-delay"
+    ),
   });
   useTextRevealScrollTrigger(".corporate-txt", ref, "chars", {
     stagger: {

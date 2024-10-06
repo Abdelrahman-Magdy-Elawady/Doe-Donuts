@@ -52,7 +52,9 @@ export default function ContactPage() {
     yPercent: 200,
     stagger: 0.07,
     ease: "power1.inOut",
-    delay: 0.3,
+    delay: getComputedStyle(document.documentElement).getPropertyValue(
+      "--animation-delay"
+    ),
   });
 
   return (

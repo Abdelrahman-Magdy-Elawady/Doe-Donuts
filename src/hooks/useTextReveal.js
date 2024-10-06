@@ -10,10 +10,6 @@ export default function useTextReveal(targets, ref, type, config) {
         const entity = new SplitType(target)[type];
         gsap.from(entity, {
           ...config,
-          scrollTrigger: {
-            trigger: target,
-            ...config.scrollTrigger,
-          },
         });
       });
     },

@@ -47,7 +47,9 @@ export default function HowItWorksPage() {
     yPercent: 100,
     stagger: 0.07,
     ease: "power1.inOut",
-    delay: 0.3,
+    delay: getComputedStyle(document.documentElement).getPropertyValue(
+      "--animation-delay"
+    ),
   });
 
   return (

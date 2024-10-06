@@ -18,6 +18,9 @@ source {
 }
 :root {
   --md-nav-hight: 85px;
+  --pattern-animation-duration: 1.5;
+  --animation-delay: 3.25;
+
   /*-----------colors-------------*/
 
   --md-pink: #f687ad;
@@ -32,15 +35,6 @@ source {
   --soft-Sage: #b2d192;
 
   /*---------body bg&text-----------*/
-
   --body-bg: var(--md-pink);
   --body-text: white;
 }
-
-/* * {
-  border: 1px solid black;
-} */
-
-/* 
-
-*/

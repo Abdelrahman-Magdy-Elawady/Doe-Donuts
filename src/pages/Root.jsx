@@ -4,7 +4,7 @@ import {
   ScrollToTopButton,
   PageTransition,
 } from "../Components";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ScrollRestoration } from "react-router-dom";
 import { useGsapRefresh } from "../hooks";
 import ReactLenis from "lenis/react";

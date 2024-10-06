@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const donutsApi = createApi({
   reducerPath: "donuts",
   baseQuery: fetchBaseQuery({
-    baseUrl: " http://localhost:3001",
+    baseUrl: import.meta.env.VITE_PORT,
   }),
   endpoints: (builder) => ({
     fetchDonuts: builder.query({

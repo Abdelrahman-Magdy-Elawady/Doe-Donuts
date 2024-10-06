@@ -1,7 +1,7 @@
 import { FaCartPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store";
-import { Button } from "../../Components";
+import { Button } from "../../Components/Index";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import { useRef, useState } from "react";
 import styles from "./styles.module.css";

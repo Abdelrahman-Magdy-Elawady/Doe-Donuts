@@ -17,7 +17,7 @@ import {
   useTextRevealScrollTrigger,
 } from "../../hooks";
 import { useRef } from "react";
-import { Carousel, Button, Stepper, CurveBottom } from "../../Components";
+import { Carousel, Button, Stepper, CurveBottom } from "../../Components/Index";
 import { Navigation } from "swiper/modules";
 import { FaArrowDown } from "react-icons/fa";
 import CorporateForm from "./CorporateForm";

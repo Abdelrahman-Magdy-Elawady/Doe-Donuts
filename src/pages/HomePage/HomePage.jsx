@@ -26,7 +26,12 @@ import {
 import { useFetchDonutsQuery } from "../../store";
 
 //---------------------------------------------------------------
-import { Button, Carousel, CurveBottom, PalmTree } from "../../Components";
+import {
+  Button,
+  Carousel,
+  CurveBottom,
+  PalmTree,
+} from "../../Components/Index";
 import { Navigation } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa6";
 import { useRef } from "react";

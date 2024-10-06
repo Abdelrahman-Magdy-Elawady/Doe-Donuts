@@ -1,6 +1,6 @@
 import { cn } from "../../Utils/cn";
 import { TiPlus, TiMinus } from "react-icons/ti";
-import { Button } from "../../Components";
+import { Button } from "../../Components/Index";
 import { useDispatch } from "react-redux";
 import { modifyCart, removeFromCart } from "../../store";
 import { RiDeleteBin5Fill } from "react-icons/ri";

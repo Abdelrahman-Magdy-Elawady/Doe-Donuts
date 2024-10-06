@@ -1,5 +1,5 @@
 import { content } from "./constants";
-import { CurveBottom } from "../../../Components";
+import { CurveBottom } from "../../../Components/Index";
 import { useCssVarSetter } from "../../../hooks";
 //-------------------------------------------------
 

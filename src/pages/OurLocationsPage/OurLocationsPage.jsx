@@ -3,7 +3,7 @@ import { ourLocations_hero, ourLocations_WTN } from "../../assets/constants";
 import { useRef } from "react";
 import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
 
-import { Button, CurveBottom } from "../../Components";
+import { Button, CurveBottom } from "../../Components/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 

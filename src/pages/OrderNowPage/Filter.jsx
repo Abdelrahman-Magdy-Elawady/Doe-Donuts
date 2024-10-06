@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { DropDown } from "../../Components";
+import { DropDown } from "../../Components/Index";
 import { FaFilter } from "react-icons/fa6";
 
 export default function Filter({ setFilterTerms }) {

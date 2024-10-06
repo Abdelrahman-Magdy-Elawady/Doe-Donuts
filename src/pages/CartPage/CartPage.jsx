@@ -1,7 +1,7 @@
 import { useChangeColor, useCssVarSetter } from "../../hooks";
 import { empty_cart_icon } from "../../assets/constants";
 //---------------------------------------------------------------
-import { CurveBottom, Button } from "../../Components";
+import { CurveBottom, Button } from "../../Components/Index";
 import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartListItem from "./CartListItem";

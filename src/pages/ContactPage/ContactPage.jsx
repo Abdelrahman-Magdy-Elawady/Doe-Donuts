@@ -7,7 +7,7 @@ import {
 } from "../../assets/constants";
 import { useRef } from "react";
 import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
-import { Input, TextArea, Button, CurveBottom } from "../../Components";
+import { Input, TextArea, Button, CurveBottom } from "../../Components/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 

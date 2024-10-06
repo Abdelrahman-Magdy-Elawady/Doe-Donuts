@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useCssVarSetter, useChangeColor } from "../../hooks";
-import { CurveBottom } from "../../Components";
+import { CurveBottom } from "../../Components/Index";
 import DonutCard from "./DonutCard";
 import { useFetchDonutsQuery } from "../../store";
 import Filter from "./Filter";

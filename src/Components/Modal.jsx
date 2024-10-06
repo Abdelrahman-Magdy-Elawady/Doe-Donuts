@@ -46,7 +46,7 @@ export default function Modal({ children, className, close }) {
         ref={modal}
       >
         <RxCross2
-          className="p-1 text-3xl md:text-4xl support-hover:hover:scale-125  transition-transform cursor-pointer absolute right-0 top-0 -translate-x-1/4 translate-y-1/4"
+          className="w-6 h-6 text-3xl md:text-4xl support-hover:hover:scale-125  transition-transform cursor-pointer absolute right-0 top-0 -translate-x-1/4 translate-y-1/4"
           onClick={closeHandler}
         />
         {children}

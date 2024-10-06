@@ -1,4 +1,4 @@
-import { Modal, Button } from "../../Components";
+import { Modal, Button } from "../../Components/Index";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store";
@@ -27,7 +27,7 @@ export default function DonutCardDetails({ donut, close, className }) {
             />
           </div>
         </div>
-        <div className="space-y-8 lg:space-y-24 self-center w-full">
+        <div className="space-y-4 sm:space-y-8 lg:space-y-24 self-center w-full">
           <div className=" text-center text-2xl uppercase">{donut.name}</div>
           <div>{donut.cost} $</div>
           <div>{donut.des}</div>

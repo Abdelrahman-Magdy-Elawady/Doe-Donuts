@@ -7,7 +7,7 @@ import {
   useTextRevealScrollTrigger,
 } from "../../hooks";
 import Marquee from "react-fast-marquee";
-import { Button, CurveBottom, PalmTree } from "../../Components";
+import { Button, CurveBottom, PalmTree } from "../../Components/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import {
   aboutUs_hero,

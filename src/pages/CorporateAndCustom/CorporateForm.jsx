@@ -1,4 +1,4 @@
-import { Input, TextArea, Button } from "../../Components";
+import { Input, TextArea, Button } from "../../Components/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 /*------------------------------------------------*/

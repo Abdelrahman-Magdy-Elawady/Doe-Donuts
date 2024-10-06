@@ -2,7 +2,7 @@ import { timeLineContent } from "./constants";
 import { useRef } from "react";
 import { useCssVarSetter, useChangeColor, useTextReveal } from "../../hooks";
 
-import { Button, CurveBottom, TimeLine } from "../../Components";
+import { Button, CurveBottom, TimeLine } from "../../Components/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import {
   howIW_hero,

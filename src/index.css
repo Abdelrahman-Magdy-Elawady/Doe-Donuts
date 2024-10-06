@@ -18,8 +18,8 @@ source {
 }
 :root {
   --md-nav-hight: 85px;
-  --pattern-animation-duration: 1.5;
-  --animation-delay: 3.25;
+  --pattern-animation-duration: 0.75;
+  --animation-delay: 0.8;
 
   /*-----------colors-------------*/
 

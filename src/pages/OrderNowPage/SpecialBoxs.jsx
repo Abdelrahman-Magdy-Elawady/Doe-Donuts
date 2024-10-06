@@ -70,7 +70,9 @@ export default function SpecialBoxs({ product }) {
           >
             <img
               src={img}
-              alt=""
+              alt={product.title}
+              decoding="async"
+              loading="lazy"
               className="pointer-events-none size-full object-center  object-cover "
             />
           </figure>

@@ -38,6 +38,10 @@ export default function CartListItem({ className, cartItem }) {
         <div className="absolute inset-0">
           <img
             src={cartItem.img}
+            role="presentation"
+            alt={cartItem.name}
+            decoding="async"
+            loading="lazy"
             className="size-full object-center  object-cover support-hover:hover:scale-105 transition-transform duration-500 "
           />
         </div>

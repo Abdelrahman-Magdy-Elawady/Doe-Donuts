@@ -20,6 +20,8 @@ export default function DonutCard({ donut }) {
           <img
             src={donut.img}
             alt={donut.name}
+            decoding="async"
+            loading="lazy"
             className="size-full object-cover object-center  hover:scale-110 transition-transform duration-300"
           />
         </div>

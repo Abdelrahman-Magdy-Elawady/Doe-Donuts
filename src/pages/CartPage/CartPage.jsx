@@ -44,6 +44,9 @@ export default function CartPage() {
           <img
             src={empty_cart_icon}
             alt=""
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="object-center object-cover"
           />
         </div>

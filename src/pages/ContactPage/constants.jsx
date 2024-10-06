@@ -63,8 +63,8 @@ export const contactInfo = [
       {
         link: (
           <a
-            href="/pages/our-locations#grey-lynn"
-            title="/pages/our-locations#grey-lynn"
+            href="/ourLocations#grey-lynn"
+            title="grey-lynn"
             className="underline"
           >
             Greylynn
@@ -74,8 +74,8 @@ export const contactInfo = [
       {
         link: (
           <a
-            href="/pages/our-locations#commercial-bay"
-            title="/pages/our-locations#commercial-bay"
+            href="/ourLocations#commercial-bay"
+            title="commercial-bay"
             className="underline"
           >
             Commercial Bay

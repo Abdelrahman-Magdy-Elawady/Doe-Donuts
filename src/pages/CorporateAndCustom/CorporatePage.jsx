@@ -100,6 +100,10 @@ const CorporatePage = () => {
           <img
             src={corporateHeroImg}
             className="size-full object-contain"
+            role="presentation"
+            fetchPriority="high"
+            decoding="async"
+            loading="lazy"
             style={{
               objectPosition: "left bottom",
             }}
@@ -142,6 +146,10 @@ const CorporatePage = () => {
               <img
                 src={slide}
                 className="size-full object-cover object-bottom"
+                role="presentation"
+                decoding="async"
+                loading="lazy"
+                alt=""
               />
             </div>
           ))}
@@ -217,6 +225,9 @@ const CorporatePage = () => {
           <img
             src={whereToNext}
             alt=""
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="size-full object-contain "
             style={{
               objectPosition: "right bottom",

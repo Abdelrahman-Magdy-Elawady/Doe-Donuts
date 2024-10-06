@@ -1,13 +1,14 @@
 export const locations = [
   {
     location: "Grey Lynn",
+    id: "grey-lynn",
     branchs: ["356 Great North Road", "Grey Lynn, Auckland"],
     openHours: ["Wed - Fri: 8am - 2pm", "Sat - Sun: 8:30am - 2pm"],
     links: [
-      <a href="mailto:orders@doe.co.nz" title="mailto:orders@doe.co.nz">
+      <a href="mailto:orders@doe.co.nz" title="mailto:orders@doe.co.nz" key={1}>
         orders@doe.co.nz
       </a>,
-      <a href="https://goo.gl/maps/kxiS6Q9qHaCj11zj7" target="_blank">
+      <a href="https://goo.gl/maps/kxiS6Q9qHaCj11zj7" target="_blank" key={2}>
         View on Google Maps
       </a>,
     ],
@@ -17,21 +18,25 @@ export const locations = [
         className="size-full object-cover object-center"
         allowFullScreen={true}
         loading="lazy"
+        fetchPriority="high"
+        decoding="async"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
     ),
   },
   {
     location: "Commercial Bay",
+    id: "commercial-bay",
     branchs: ["Commercial Bay,", "Harbour Eats,", "Auckland CBD"],
     openHours: ["Mon - Fri: 9am - 6pm", "Sat - Sun: 10am - 6pm"],
     links: [
-      <a href="mailto:orders@doe.co.nz" title="mailto:orders@doe.co.nz">
+      <a href="mailto:orders@doe.co.nz" title="mailto:orders@doe.co.nz" key={1}>
         orders@doe.co.nz
       </a>,
       <a
         href="https://www.google.com/maps/place/Commercial+Bay/@-36.8438848,174.7661305,15z/data=!4m6!3m5!1s0x6d0d475817c0ee99:0x12f4a31879616774!8m2!3d-36.8438848!4d174.7661305!16s%2Fg%2F11f658y7jg"
         target="_blank"
+        key={2}
       >
         View on Google Maps
       </a>,
@@ -42,6 +47,8 @@ export const locations = [
         className="size-full object-cover object-center"
         allowFullScreen={true}
         loading="lazy"
+        fetchPriority="high"
+        decoding="async"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
     ),
@@ -53,7 +60,7 @@ export const locations = [
       "Deliveries: Wednesday to Friday - 10am to 3pm",
     ],
     links: [
-      <a href="mailto:orders@doe.co.nz" title="mailto:orders@doe.co.nz">
+      <a href="mailto:orders@doe.co.nz" title="mailto:orders@doe.co.nz" key={1}>
         orders@doe.co.nz
       </a>,
     ],
@@ -63,6 +70,8 @@ export const locations = [
         className="size-full object-cover object-center"
         allowFullScreen={true}
         loading="lazy"
+        fetchPriority="high"
+        decoding="async"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
     ),

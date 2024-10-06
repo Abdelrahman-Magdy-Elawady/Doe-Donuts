@@ -105,6 +105,10 @@ export default function HowItWorksPage() {
           <div className="absolute inset-0 lg:ml-40">
             <img
               src={ourDonuts_hero}
+              role="presentation"
+              fetchPriority="high"
+              decoding="async"
+              loading="lazy"
               className="size-full object-contain object-left-bottom"
             />
           </div>
@@ -114,6 +118,9 @@ export default function HowItWorksPage() {
         <div className="w-40">
           <img
             src={ourDonuts_hand}
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="size-full object-cover object-center"
           />
         </div>
@@ -130,6 +137,9 @@ export default function HowItWorksPage() {
           <div className="absolute inset-0 -z-10">
             <img
               src={ourDonuts_ingredient1}
+              role="presentation"
+              decoding="async"
+              loading="lazy"
               className="size-full object-contain"
               style={{ objectPosition: "bottom center" }}
             />
@@ -149,6 +159,9 @@ export default function HowItWorksPage() {
           <div>
             <img
               src={ourDonuts_ingredient2}
+              role="presentation"
+              decoding="async"
+              loading="lazy"
               className="size-full object-contain object-right-bottom"
             />
           </div>
@@ -168,6 +181,10 @@ export default function HowItWorksPage() {
           <div className="absolute inset-0">
             <img
               src={ourDonuts_ingredient3}
+              role="presentation"
+              alt=""
+              decoding="async"
+              loading="lazy"
               className="size-full object-contain"
             />
           </div>
@@ -215,6 +232,9 @@ export default function HowItWorksPage() {
           <img
             src={ourDonuts_where2Next}
             alt=""
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="size-full object-contain "
             style={{
               objectPosition: "right bottom",

@@ -66,7 +66,6 @@ export default function HowItWorksPage() {
             how it
           </div>
           <div className="text-end lg:text-center lg:ml-40 hero overflow-hidden">
-            {" "}
             works
           </div>
         </h1>
@@ -75,7 +74,11 @@ export default function HowItWorksPage() {
           <div className="absolute inset-0">
             <img
               src={howIW_hero}
-              className="size-full object-contain object-bottom"
+              className="size-full object-contain object-left-bottom"
+              role="presentation"
+              fetchPriority="high"
+              decoding="async"
+              loading="lazy"
             />
           </div>
         </div>
@@ -113,7 +116,9 @@ export default function HowItWorksPage() {
         <div className="absolute inset-0 -z-10">
           <img
             src={howIW_WTNext}
-            alt=""
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="size-full object-contain "
             style={{
               objectPosition: "right bottom",

@@ -64,6 +64,11 @@ export default function OurLocationsPage() {
         <div className="relative">
           <div className="absolute inset-0 lg:ml-40">
             <img
+              role="presentation"
+              fetchPriority="high"
+              alt=""
+              decoding="async"
+              loading="lazy"
               src={ourLocations_hero}
               className="size-full object-contain object-left-bottom"
             />
@@ -75,6 +80,7 @@ export default function OurLocationsPage() {
         {locations.map((loc, index) => (
           <div
             key={index}
+            id={loc?.id}
             className=" lg:grid lg:grid-cols-2 lg:grid-rows-none  text-3xl gap-16 text-center xl:text-start mx-8 lg:mx-auto lg:w-[55rem] xl:w-[75rem] space-y-16 lg:space-y-0"
           >
             <div className="h-[30rem] rounded-2xl overflow-hidden lg:justify-self-end w-full">
@@ -126,6 +132,9 @@ export default function OurLocationsPage() {
           <img
             src={ourLocations_WTN}
             alt=""
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="size-full object-contain "
             style={{
               objectPosition: "right bottom",

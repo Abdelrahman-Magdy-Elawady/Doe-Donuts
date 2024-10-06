@@ -66,28 +66,28 @@ export default function ContactPage() {
         <h1 className="text-center uppercase font-extrabold  mx-auto py-8 text-6xl sm:text-8xl  xl:text-9xl self-center lg:self-start hero overflow-hidden">
           contact
         </h1>
-        <div className="relative  ml-[15%] md:ml-[7%] ">
-          <picture className="absolute inset-0">
-            <source
-              media="(max-width:768px)"
-              srcSet={contactHeroSm}
-              type="image/png"
-            />
-            <source
-              media="(min-width:769px)"
-              srcSet={contactHero}
-              type="image/webp"
-            />
-            <img
-              src={contactHeroSm}
-              alt="donuts"
-              className="size-full  object-contain "
-              style={{
-                objectPosition: "bottom center",
-              }}
-            />
-          </picture>
-        </div>
+
+        <picture className="ml-[15%] md:ml-[7%] ">
+          <source
+            media="(max-width:768px)"
+            srcSet={contactHeroSm}
+            type="image/png"
+          />
+          <source
+            media="(min-width:769px)"
+            srcSet={contactHero}
+            type="image/webp"
+          />
+          <img
+            src={contactHeroSm}
+            alt="donuts"
+            role="presentation"
+            fetchPriority="high"
+            decoding="async"
+            loading="lazy"
+            className="size-full  object-contain object-bottom"
+          />
+        </picture>
       </section>
       <section className="sec-2 pt-[calc(var(--md-nav-hight)+8rem)] min-h-screen relative isolate pb-32">
         <h2 className="uppercase font-extrabold text-[3.5rem] leading-none   text-center  max-w-[1024px] mx-auto px-8 mb-8">
@@ -161,6 +161,9 @@ export default function ContactPage() {
             <img
               src={creamyDonut}
               alt="donuts"
+              role="presentation"
+              decoding="async"
+              loading="lazy"
               className="size-full  object-contain"
               style={{
                 objectPosition: "bottom right",
@@ -173,6 +176,10 @@ export default function ContactPage() {
             <img
               src={choco}
               alt="donuts"
+              role="presentation"
+              fetchPriority="high"
+              decoding="async"
+              loading="lazy"
               className="size-full  object-contain "
               style={{
                 objectPosition: "bottom left",

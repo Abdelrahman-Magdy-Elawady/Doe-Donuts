@@ -23,6 +23,9 @@ export default function DonutCardDetails({ donut, close, className }) {
           <div className="absolute inset-0">
             <img
               src={donut.img}
+              alt={donut.name}
+              decoding="async"
+              loading="lazy"
               className="size-full object-center  object-cover support-hover:hover:scale-105 transition-transform duration-500 "
             />
           </div>

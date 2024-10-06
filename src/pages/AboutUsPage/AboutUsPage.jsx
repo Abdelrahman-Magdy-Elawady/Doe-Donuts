@@ -98,7 +98,7 @@ export default function AboutUsPage() {
       ref={ref}
     >
       <section className="sec-1 pt-[calc(var(--md-nav-hight)+.25rem)] h-screen grid grid-rows-2 lg:[grid-template-rows:30%_70%]">
-        <h1 className="text-center uppercase font-extrabold  sm:p-8 text-8xl sm:text-[10rem]  xl:text-[16rem] w-full self-end  lg:self-start flex sm:items-end items-center flex-col">
+        <h1 className="text-center uppercase font-extrabold  sm:p-8 text-8xl sm:text-[10rem]  xl:text-[16rem] w-full self-end  lg:self-start flex sm:items-end items-center flex-col ">
           <span className=" hero overflow-hidden">about</span>
           <span className=" hero overflow-hidden"> us</span>
         </h1>
@@ -106,6 +106,10 @@ export default function AboutUsPage() {
           <div className="absolute inset-0">
             <img
               src={aboutUs_hero}
+              role="presentation"
+              fetchPriority="high"
+              decoding="async"
+              loading="lazy"
               className="size-full object-contain"
               style={{
                 objectPosition: "bottom left",
@@ -128,6 +132,9 @@ export default function AboutUsPage() {
         <div className="absolute inset-0 -z-10">
           <img
             src={aboutUs_donuts}
+            role="presentation"
+            decoding="async"
+            loading="lazy"
             className="size-full object-contain"
             style={{ objectPosition: "bottom center" }}
           />
@@ -147,6 +154,9 @@ export default function AboutUsPage() {
           <img
             src={aboutUs_girls}
             className="size-full object-cover object-center"
+            role="presentation"
+            decoding="async"
+            loading="lazy"
           />
         </div>
         <div className="text-2xl flex justify-center  py-24 flex-wrap space-y-8 gap-8 items-baseline">
@@ -173,6 +183,9 @@ export default function AboutUsPage() {
                 <div key={index} className=" h-20 flex-shrink-0">
                   <img
                     src={img}
+                    role="presentation"
+                    decoding="async"
+                    loading="lazy"
                     className="size-full object-contain object-center"
                   />
                 </div>

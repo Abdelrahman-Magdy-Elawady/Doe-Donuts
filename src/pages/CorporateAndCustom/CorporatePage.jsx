@@ -101,7 +101,6 @@ const CorporatePage = () => {
             src={corporateHeroImg}
             className="size-full object-contain"
             role="presentation"
-            fetchPriority="high"
             decoding="async"
             loading="lazy"
             style={{

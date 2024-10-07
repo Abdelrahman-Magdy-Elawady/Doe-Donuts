@@ -76,7 +76,6 @@ export default function HowItWorksPage() {
               src={howIW_hero}
               className="size-full object-contain object-left-bottom"
               role="presentation"
-              fetchPriority="high"
               decoding="async"
               loading="lazy"
             />

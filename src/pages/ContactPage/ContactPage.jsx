@@ -83,7 +83,6 @@ export default function ContactPage() {
             src={contactHeroSm}
             alt="donuts"
             role="presentation"
-            fetchPriority="high"
             decoding="async"
             loading="lazy"
             className="size-full  object-contain object-bottom"
@@ -178,7 +177,6 @@ export default function ContactPage() {
               src={choco}
               alt="donuts"
               role="presentation"
-              fetchPriority="high"
               decoding="async"
               loading="lazy"
               className="size-full  object-contain "

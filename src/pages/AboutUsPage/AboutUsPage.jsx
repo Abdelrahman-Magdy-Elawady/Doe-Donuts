@@ -107,7 +107,6 @@ export default function AboutUsPage() {
             <img
               src={aboutUs_hero}
               role="presentation"
-              fetchPriority="high"
               decoding="async"
               loading="lazy"
               className="size-full object-contain"

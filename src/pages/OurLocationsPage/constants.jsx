@@ -18,7 +18,6 @@ export const locations = [
         className="size-full object-cover object-center"
         allowFullScreen={true}
         loading="lazy"
-        fetchPriority="high"
         decoding="async"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
@@ -47,7 +46,6 @@ export const locations = [
         className="size-full object-cover object-center"
         allowFullScreen={true}
         loading="lazy"
-        fetchPriority="high"
         decoding="async"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
@@ -70,7 +68,6 @@ export const locations = [
         className="size-full object-cover object-center"
         allowFullScreen={true}
         loading="lazy"
-        fetchPriority="high"
         decoding="async"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>

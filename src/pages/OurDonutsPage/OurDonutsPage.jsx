@@ -106,7 +106,6 @@ export default function HowItWorksPage() {
             <img
               src={ourDonuts_hero}
               role="presentation"
-              fetchPriority="high"
               decoding="async"
               loading="lazy"
               className="size-full object-contain object-left-bottom"

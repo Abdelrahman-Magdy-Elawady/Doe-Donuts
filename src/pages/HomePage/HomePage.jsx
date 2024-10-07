@@ -235,7 +235,6 @@ export default function HomePage() {
           <img
             src={heroSmImg}
             role="presentation"
-            fetchPriority="high"
             decoding="async"
             loading="lazy"
             className="size-full  object-contain object-bottom"

@@ -65,7 +65,6 @@ export default function OurLocationsPage() {
           <div className="absolute inset-0 lg:ml-40">
             <img
               role="presentation"
-              fetchPriority="high"
               alt=""
               decoding="async"
               loading="lazy"

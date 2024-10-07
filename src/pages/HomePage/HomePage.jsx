@@ -154,17 +154,18 @@ export default function HomePage() {
                   decoding="async"
                   className="size-full object-cover object-center  hover:scale-105 transition-transform duration-300"
                 />
-                <div
-                  className="w-24 aspect-square absolute z-50 top-0 right-0 flex flex-col justify-center items-center rotate-12"
-                  style={{
-                    backgroundImage: `url(${monthlySpecialImg})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <span>monthly</span>
-                  <span>specials</span>
+                <div className="w-24 aspect-square absolute z-50 top-0 right-0  rotate-12">
+                  <img
+                    src={monthlySpecialImg}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="object-cover object-center "
+                  />
+                  <div className="flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                    <span>monthly</span>
+                    <span>specials</span>
+                  </div>
                 </div>
               </div>
               <div className="flex justify-between items-center font-extrabold ">

@@ -26,11 +26,9 @@ export default function DonutCard({ donut }) {
           />
         </div>
 
-        <div className="flex justify-between items-center font-extrabold ">
-          <div className="text-xl  lg:text-2xl uppercase line-clamp-1">
-            {donut.name}
-          </div>
-          <div className="text-xl text-nowrap">{donut.cost} $</div>
+        <div className="flex justify-between items-center font-extrabold text-xl">
+          <div className="lg:text-2xl uppercase line-clamp-1">{donut.name}</div>
+          <div className="text-nowrap">{donut.cost} $</div>
         </div>
       </div>
       {showDetails && (

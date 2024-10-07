@@ -33,7 +33,7 @@ export default function ScrollToTopButton({ className, ...rest }) {
       className={cn(
         "outline-0 fixed z-20 bottom-5 right-5 text-[--body-bg] text-2xl rounded-full p-2 support-hover:hover:cursor-pointer duration-500  support-hover:hover:scale-75 [box-shadow:0_0_10px_5px_var(--body-text)]",
         {
-          "scale-0 rotate-180": !isVisible,
+          "rotate-180": !isVisible,
         },
         className
       )}

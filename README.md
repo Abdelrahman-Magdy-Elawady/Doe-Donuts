@@ -1,8 +1,35 @@
-# React + Vite
+# Doe-Donuts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [Built with](#built-with)
+- [Live demo](#live-demo)
+- [author](#author)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Built with
+
+- "react": "^18.3.1",
+- "react-dom": "^18.3.1",
+- "@gsap/react": "^2.1.1",
+- "@reduxjs/toolkit": "^2.2.7",
+- "classnames": "^2.5.1",
+- "gsap": "^3.12.5",
+- "json-server": "^0.17.4",
+- "lenis": "^1.1.13",
+- "react-fast-marquee": "^1.6.5",
+- "react-hook-form": "^7.53.0",
+- "react-icons": "^5.3.0",
+- "react-redux": "^9.1.2",
+- "react-router-dom": "^6.26.2",
+- "split-type": "^0.3.4",
+- "swiper": "^11.1.14",
+- "tailwind-merge": "^2.5.2"
+- "tailwindcss": "^3.4.11",
+
+### Live demo
+
+- [@Doe-Donuts](https://doe-donuts.vercel.app/)
+
+## Author
+
+- LinkedIn - [@Abdelrahman magdy](https://www.linkedin.com/in/abdelrahman-magdy-el-awady/)

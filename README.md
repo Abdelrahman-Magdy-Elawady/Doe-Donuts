@@ -6,6 +6,12 @@
 - [Live demo](#live-demo)
 - [author](#author)
 
+### ScreenShots
+
+![](<./src/assets/imgs/github%20thumnails/img%20(3).png>)
+![](<./src/assets/imgs/github%20thumnails/img%20(1).png>)
+![](<./src/assets/imgs/github%20thumnails/img%20(2).png>)
+
 ### Built with
 
 - "react": "^18.3.1",

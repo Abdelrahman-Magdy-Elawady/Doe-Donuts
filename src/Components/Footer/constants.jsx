@@ -106,7 +106,14 @@ export const content = [
 
 export const copyRights = [
   "©Copyright Doe Donuts 2024 all rights reserved.",
-  <a href="/" key={"copyrights"}>
-    developed by .....
-  </a>,
+  <div key={"copyrights"}>
+    <span>developed by </span>
+    <a
+      href="https://www.linkedin.com/in/abdelrahman-magdy-elawady/"
+      className="font-bold"
+      target="_blanck"
+    >
+      @ Abdelrahman Magdy
+    </a>
+  </div>,
 ];
